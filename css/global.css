@@ -1,0 +1,2838 @@
+@font-face {
+    font-family: 'Austin Web';
+    src: url('/fonts/Austin-Roman-Web.eot');
+    src: url('/fonts/Austin-Roman-Web.eot?#iefix') format('embedded-opentype'), url('/fonts/Austin-Roman-Web.woff2') format('woff2'), url('/fonts/Austin-Roman-Web.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: #EEECEA;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body,
+p,
+input,
+textarea,
+select {
+    font-family: 'Austin Web';
+    font-weight: 300;
+    font-size: 45px;
+    font-style: normal;
+    font-stretch: normal;
+    color: #1A1818;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    /* font-smoothing: antialiased; */
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+body,
+#menu,
+#home1,
+#gallery1,
+#page-left,
+#page-right {
+    min-height: 700px;
+}
+
+*:not(video) {
+    cursor: none !important;
+}
+
+video {
+    cursor: auto;
+}
+
+#cursor {
+    position: fixed;
+    top: -100px;
+    left: -100px;
+    width: 0px;
+    height: 0px;
+    border-radius: 100%;
+    background-color: #867D78;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    opacity: .8;
+    z-index: 2;
+    transition: width .3s, height .3s;
+}
+
+#cursor:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -6px;
+    margin-left: -2px;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #FFF;
+    transform: rotate(-45deg);
+    border-bottom: none;
+    border-right: none;
+    opacity: 0;
+    box-sizing: border-box;
+    transition: opacity 0s;
+}
+
+body.page-fade-in #cursor.mouse-enter {
+    width: 60px;
+    height: 60px;
+    opacity: .5;
+}
+
+body.page-fade-in #cursor.mouse-enter.arrow {
+    width: 80px;
+    height: 80px;
+    opacity: 1;
+    background-color: rgba(134, 125, 120, .6);
+}
+
+body.page-fade-in #cursor.mouse-enter.arrow:after {
+    opacity: 1;
+    transition: opacity .3s;
+}
+
+body.page-fade-in #cursor.mouse-enter.arrow.right:after {
+    margin-left: -5px;
+    transform: rotate(135deg);
+}
+
+body.page-fade-in #cursor {
+    width: 14px;
+    height: 14px;
+}
+
+a,
+a *,
+.page-left-button,
+.page-left-button *,
+.page-right-button,
+.page-right-button *,
+.cursor,
+.cursor * {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#cursor.document-mouse-leave {
+    display: none;
+}
+
+.cursor-click {
+    position: fixed;
+    width: 0px;
+    height: 0px;
+    border-radius: 100%;
+    background-color: #867D78;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    opacity: 1;
+    z-index: 1;
+    transition: .5s;
+}
+
+.cursor-click.fade-in {
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+}
+
+input,
+textarea,
+select {
+    padding: 0px 52px;
+    width: 100%;
+    height: 100px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #E2E2E2;
+    border-radius: 0px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    resize: none;
+    font-family: "proxima-nova", sans-serif;
+    font-size: 23px;
+    color: #222;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+a,
+a:active,
+a:focus {
+    outline: none;
+}
+
+::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, .3);
+}
+
+:-moz-placeholder {
+    color: rgba(0, 0, 0, .3);
+    opacity: 1;
+}
+
+::-moz-placeholder {
+    color: rgba(0, 0, 0, .3);
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: rgba(0, 0, 0, .3);
+}
+
+::-ms-input-placeholder {
+    color: rgba(0, 0, 0, .3);
+}
+
+.no-transform {
+    transition: none !important;
+}
+
+a,
+a:focus {
+    outline: 0;
+}
+
+::selection {
+    background: rgba(0, 0, 0, .05);
+}
+
+body.preload #container {
+    overflow: hidden;
+    height: 100%;
+}
+
+.page {
+    margin: 0px auto;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+}
+
+#logo {
+    position: fixed;
+    left: 37px;
+    top: 57px;
+    width: 58px;
+    height: 57px;
+    z-index: 1;
+    transition: opacity .4s;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+}
+
+body.preload.page-fade-in #logo,
+body.preload.page-fade-in #menu-button {
+    opacity: .3;
+    pointer-events: none;
+}
+
+#logo:before,
+#logo:after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    transition: opacity .4s;
+}
+
+#logo:before {
+    /* background-image: url('/img/logo-black.png'); */
+    background-image: url('/assets/icons/logo.png');
+}
+
+#logo:after {
+    opacity: 0;
+    /* background-image: url('/img/logo-white.png'); */
+    background-image: url('assets/icons/logo.png');
+}
+
+body.logo-white.page-fade-in #logo:before,
+body.menu #logo:before,
+body.page-fade-in.artists-catalogue #logo:before,
+body.page-fade-in.projects-catalogue #logo:before,
+body.page-fade-in.events-list #logo:before {
+    opacity: 0;
+}
+
+body.logo-white.page-fade-in #logo:after,
+body.menu #logo:after,
+body.page-fade-in.artists-catalogue #logo:after,
+body.page-fade-in.works-filters #logo:after,
+body.page-fade-in.projects-catalogue #logo:after,
+body.page-fade-in.events-list #logo:after {
+    opacity: 1;
+}
+
+/* LOGO - 1 */
+#logo1 {
+    position: fixed;
+    left: 37px;
+    top: 57px;
+    width: 58px;
+    height: 57px;
+    z-index: 1;
+    transition: opacity .4s;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+}
+
+body.preload.page-fade-in #logo1,
+body.preload.page-fade-in #menu-button {
+    opacity: .3;
+    pointer-events: none;
+}
+
+#logo1:before,
+#logo1:after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    transition: opacity .4s;
+}
+
+#logo1:before {
+    /* background-image: url('/img/logo-black.png'); */
+    background-image: url('/assets/icons/logo.png');
+}
+
+#logo1:after {
+    opacity: 0;
+    /* background-image: url('/img/logo-white.png'); */
+    background-image: url('assets/icons/logo.png');
+}
+
+body.logo-white.page-fade-in #logo1:before,
+body.menu #logo1:before,
+body.page-fade-in.artists-catalogue #logo1:before,
+body.page-fade-in.projects-catalogue #logo1:before,
+body.page-fade-in.events-list #logo1:before {
+    opacity: 0;
+}
+
+body.logo-white.page-fade-in #logo1:after,
+body.menu #logo1:after,
+body.page-fade-in.artists-catalogue #logo1:after,
+body.page-fade-in.works-filters #logo1:after,
+body.page-fade-in.projects-catalogue #logo1:after,
+body.page-fade-in.events-list #logo1:after {
+    opacity: 1;
+}
+
+#menu-button {
+    position: fixed;
+    top: 44px;
+    right: 25px;
+    width: 80px;
+    height: 80px;
+    transform: rotate(90deg);
+    z-index: 1;
+    transition: opacity .4s;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+}
+
+#menu-button-inside {
+    margin-top: 28px;
+    height: 22px;
+    overflow: hidden;
+}
+
+#menu-button p {
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+    color: #1A1818;
+    transition: color .3s, transform .4s .2s;
+}
+
+body.logo-white.page-fade-in #menu-button p,
+body.menu #menu-button p,
+body.page-fade-in.artists-catalogue #menu-button p,
+body.page-fade-in.projects-catalogue #menu-button p,
+body.page-fade-in.events-list #menu-button p {
+    color: #EEECEA;
+}
+
+body.menu #menu-button p {
+    transition: color .3s, transform .4s;
+    transform: translateY(-50%);
+}
+
+#menu {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    visibility: hidden;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    z-index: -1;
+    backface-visibility: hidden;
+    color: #474343;
+}
+
+body.menu #menu,
+body.menu-fadeout #menu {
+    z-index: 1;
+    overflow-y: scroll;
+    visibility: visible !important;
+}
+
+#menu-bg {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: #1A1818;
+    opacity: 0;
+    transition: opacity .4s .2s;
+}
+
+body.menu #menu-bg {
+    opacity: 1 !important;
+    transition: opacity .45s;
+}
+
+#menu-inside {
+    position: relative;
+    height: 100%;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+body.menu #menu-inside {
+    opacity: 1;
+    transition: opacity 0s;
+}
+
+.menu-line {
+    position: absolute;
+    top: 0px;
+    bottom: 100%;
+    border-left: 1px solid rgba(74, 74, 74, .1);
+    transition: bottom .5s .5s;
+}
+
+.menu-line:nth-child(1) {
+    left: 154px;
+}
+
+.menu-line:nth-child(2) {
+    left: calc(25% + 77px);
+}
+
+.menu-line:nth-child(3) {
+    left: 50%;
+}
+
+.menu-line:nth-child(4) {
+    left: calc(75% - 66px);
+}
+
+.menu-line:nth-child(5) {
+    right: 132px;
+}
+
+body.menu .menu-line:nth-child(1) {
+    transition-delay: .2s;
+}
+
+body.menu .menu-line:nth-child(2) {
+    transition-delay: .3s;
+}
+
+body.menu .menu-line:nth-child(3) {
+    transition-delay: .4s;
+}
+
+body.menu .menu-line:nth-child(4) {
+    transition-delay: .5s;
+}
+
+body.menu .menu-line:nth-child(5) {
+    transition-delay: .6s;
+}
+
+body.menu .menu-line {
+    transition-delay: .5s;
+    bottom: 0%;
+}
+
+#menu-buttons,
+#menu-info {
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    height: 630px;
+    margin-top: -315px;
+}
+
+#menu-buttons {
+    margin-left: 232px;
+}
+
+.menu-button {
+    padding: 20px 8px;
+    transform: translateX(50px);
+    opacity: 0;
+    font-size: 70px;
+    letter-spacing: 0.04em;
+    transition: transform 0s .3s, opacity 0s .3s;
+}
+
+body.menu .menu-button:nth-child(1) {
+    transition-delay: .3s;
+}
+
+body.menu .menu-button:nth-child(2) {
+    transition-delay: .4s;
+}
+
+body.menu .menu-button:nth-child(3) {
+    transition-delay: .5s;
+}
+
+body.menu .menu-button:nth-child(4) {
+    transition-delay: .6s;
+}
+
+body.menu .menu-button:nth-child(5) {
+    transition-delay: .7s;
+}
+
+.menu-button.selected {
+    color: #EEECEA;
+}
+
+body.menu .menu-button {
+    transition: transform .4s, opacity .8s;
+    transform: translateX(0px);
+    opacity: 1;
+}
+
+#menu-info {
+    left: 50%;
+    margin-left: 82px;
+}
+
+#menu-info-inside {
+    position: absolute;
+    bottom: 0px;
+    padding-bottom: 33px;
+}
+
+.menu-info {
+    transform: translateX(50px);
+    opacity: 0;
+    transition: transform 0s .3s, opacity 0s .3s;
+}
+
+body.menu .menu-info:nth-child(1) {
+    transition-delay: .6s;
+}
+
+body.menu .menu-info:nth-child(2) {
+    transition-delay: .7s;
+}
+
+body.menu .menu-info:nth-child(3) {
+    transition-delay: .8s;
+}
+
+body.menu .menu-info {
+    transition: transform .4s, opacity .8s;
+    transform: translateX(0px);
+    opacity: 1;
+}
+
+.menu-info-header {
+    margin-bottom: 14px;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.menu-info-text {
+    width: 520px;
+    margin-bottom: 63px;
+    font-size: 43px;
+    line-height: 100%;
+}
+
+.menu-info:last-child .menu-info-text {
+    margin-bottom: 0px;
+}
+
+.page,
+#bottom {
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+body.page-fade-in .page,
+body.page-fade-in #bottom {
+    opacity: 1;
+    transition: opacity .5s;
+}
+
+.page-inside {
+    margin: 0px auto;
+    width: 100%;
+    max-width: 1285px;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+}
+
+.page-inside {
+    padding: 0px 132px;
+}
+
+.page-inside-inside {
+    padding: 0px 115px;
+}
+
+.page-title {
+    position: relative;
+    margin-top: 114px;
+    padding-bottom: 40px;
+    padding-left: .4em;
+    font-size: 83px;
+    text-align: center;
+    letter-spacing: .4em;
+    line-height: 110%;
+    color: #1A1818;
+}
+
+.page-title:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    margin-left: -50px;
+    width: 100px;
+    border-bottom: 1px solid #202020;
+}
+
+#artists-catalogue .page-top-title,
+#projects-catalogue .page-top-title,
+#events-list .page-top-title {
+    padding-top: 137px;
+    letter-spacing: 0.4em;
+    text-indent: 0.4em;
+    color: #EEECEA;
+}
+
+#page-top-mobile,
+#page-bottom-mobile {
+    display: none;
+}
+
+.page-top-title {
+    margin: 0px auto;
+    max-width: 600px;
+    height: 376px;
+    padding-top: 90px;
+    font-size: 130px;
+    line-height: 110%;
+    text-align: center;
+}
+
+.page-top-city {
+    margin-top: 28px;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-align: center;
+}
+
+.page-top-image {
+    margin-top: 87px;
+    max-width: 1086px;
+    width: 100%;
+}
+
+.page-top-image-inside {
+    padding-top: 66.299%;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+.page-text-header {
+    margin-top: 110px;
+    margin-bottom: 38px;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.page-text {
+    line-height: 100%;
+}
+
+.page-featured {
+    display: inline-block;
+    width: 50%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.page-featured-inside {
+    position: relative;
+    margin: 0px auto;
+    width: 100%;
+    max-width: 86.98%;
+}
+
+.page-featured-img {
+    margin: 60px auto 0px;
+    padding-top: 50%;
+}
+
+.page-featured-img-inside {
+    overflow: hidden;
+}
+
+.page-featured-img-inside-inside {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.page-featured-title {
+    margin-top: 37px;
+    font-weight: 300;
+    font-size: 43px;
+}
+
+.page-featured-artist {
+    margin-top: 14px;
+    margin-bottom: 120px;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 500;
+}
+
+#page-see-more {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 142px;
+}
+
+#page-see-more-image {
+    float: right;
+    margin-right: 68px;
+    width: 410px;
+    height: 615px;
+    overflow: hidden;
+}
+
+#page-see-more-image-inside {
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#page-see-more-inside {
+    position: absolute;
+    top: 60px;
+    right: 0px;
+    bottom: 60px;
+    left: 0px;
+    border: 1px solid rgba(26, 24, 24, .3);
+}
+
+#page-see-more-inside-inside {
+    display: table;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-left: 115px;
+}
+
+#page-see-more-text {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 140px;
+    line-height: 100%;
+}
+
+#page-left,
+#page-right,
+#page-right-bg {
+    position: fixed;
+    width: 132px;
+    top: 0px;
+    bottom: 0px;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+#page-left,
+#page-right {
+    transition: color .3s;
+}
+
+#page-right,
+#page-right-bg {
+    right: 0px;
+}
+
+.page-left-button,
+.page-right-button {
+    position: absolute;
+    padding: 10px;
+    left: 50%;
+    transform-origin: top left;
+    transform: rotate(90deg);
+    opacity: 0;
+    white-space: nowrap;
+    text-align: center;
+    transition: opacity .3s;
+}
+
+body.page-fade-in .page-left-button,
+body.page-fade-in .page-right-button {
+    opacity: 1;
+}
+
+.page-left-button {
+    margin-left: -20px;
+    transform: rotate(-90deg);
+}
+
+.page-right-button {
+    margin-left: 23px;
+}
+
+.page-button-inside {
+    overflow: hidden;
+    height: 21px;
+}
+
+.page-button-inside-inside {
+    transition: transform .4s .2s;
+}
+
+.page-scroll {
+    width: 186px;
+    bottom: 134px;
+    text-align: right;
+}
+
+.page-scroll-line {
+    position: relative;
+    float: right;
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 70px;
+}
+
+.page-scroll-line-inside {
+    position: absolute;
+    top: 0px;
+    border-bottom: 1px solid #988F8A;
+    transition: .45s cubic-bezier(0.770, 0.000, 0.300, 1.000);
+}
+
+#page-right-pages {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -87px;
+    margin-left: -20px;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+body.page-fade-in #page-right-pages {
+    opacity: 1;
+}
+
+#page-right-pages-prev,
+#page-right-pages-next {
+    position: relative;
+    margin: 0px auto;
+    padding: 0px;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    transition: opacity .3s;
+}
+
+#page-right-pages-prev.disabled,
+#page-right-pages-next.disabled {
+    pointer-events: none;
+    opacity: .2;
+}
+
+.page-right-pages-inside {
+    position: absolute;
+    top: 18px;
+    left: 15px;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #1A1818;
+    transform: rotate(45deg);
+    border-bottom: none;
+    border-right: none;
+}
+
+#page-right-pages-cur {
+    display: table;
+    margin: 36px auto;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+#page-right-pages-next {}
+
+#page-right-pages-next .page-right-pages-inside {
+    top: 13px;
+    transform: rotate(-135deg);
+}
+
+.underscored {
+    position: relative;
+}
+
+.underscored:after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, .5);
+}
+
+#gallery-container {
+    position: relative;
+}
+
+#gallery-container,
+.gallery-each {
+    height: 790px;
+}
+
+#gallery-container-inside {
+    transition: transform .75s;
+}
+
+.gallery-each {
+    position: absolute;
+    left: 0px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#gallery-left,
+#gallery-right {
+    position: absolute;
+    left: 132px;
+    top: 50%;
+    width: 66px;
+    height: 66px;
+    margin-top: -33px;
+    background-color: #1A1818;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#gallery-right {
+    left: auto;
+    right: 132px;
+}
+
+#gallery-container .page-right-pages-inside {
+    top: 27px;
+    left: 29px;
+    border-color: #fff;
+    transform: rotate(-45deg);
+}
+
+#gallery-right .page-right-pages-inside {
+    transform: rotate(135deg);
+}
+
+#page-preloader {
+    display: none;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+}
+
+body.preload #page-preloader {
+    display: block;
+}
+
+#page-preloader-inside {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    margin-left: -75px;
+    background-color: #EEECEA;
+    transition: background-color .5s;
+    z-index: 1;
+}
+
+body.projects #page-preloader-inside {
+    height: 376px;
+    margin-top: -188px;
+    background-color: transparent;
+}
+
+body.artists #page-preloader-inside,
+body.gallery #page-preloader-inside,
+body.contact #page-preloader-inside {
+    height: 330px;
+    margin-top: -165px;
+}
+
+body.works #page-preloader-inside {
+    height: 238px;
+    margin-top: -119px;
+}
+
+body.events #page-preloader-inside {
+    height: 282px;
+    margin-top: -141px;
+}
+
+body.projects #page-preloader-inside {
+    background-color: #1A1818;
+}
+
+body.gallery #page-preloader-inside,
+body.events.page-fade-in:not(.light-bg) #page-preloader-inside {
+    background-color: #988F8A;
+}
+
+body.home #page-preloader-inside {
+    background-color: transparent;
+}
+
+#page-preloader-inside p {
+    margin: 0px auto;
+    opacity: 0;
+    text-align: center;
+    line-height: 250%;
+    transition: opacity 5s;
+    transition-delay: 0s;
+}
+
+body.projects #page-preloader-inside p {
+    color: #EEECEA;
+}
+
+body.page-fade-in #page-preloader-inside p {
+    opacity: 1;
+    transition: opacity 1.5s;
+}
+
+body.preload-fade-out #page-preloader-inside p {
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+body.preload #page-preloader-inside p:nth-child(1) {
+    transition-delay: .1s;
+}
+
+body.preload #page-preloader-inside p:nth-child(2) {
+    transition-delay: .15s;
+}
+
+body.preload #page-preloader-inside p:nth-child(3) {
+    transition-delay: .2s;
+}
+
+body.preload #page-preloader-inside p:nth-child(4) {
+    transition-delay: .25s;
+}
+
+body.preload #page-preloader-inside p:nth-child(5) {
+    transition-delay: .3s;
+}
+
+body.preload #page-preloader-inside p:nth-child(6) {
+    transition-delay: .35s;
+}
+
+body.preload #page-preloader-inside p:nth-child(7) {
+    transition-delay: .4s;
+}
+
+body.preload #page-preloader-inside p:nth-child(8) {
+    transition-delay: .45s;
+}
+
+body.preload #page-preloader-inside p:nth-child(9) {
+    transition-delay: .5s;
+}
+
+body.preload #page-preloader-inside p:nth-child(10) {
+    transition-delay: .55s;
+}
+
+body.preload #page-preloader-inside p:nth-child(11) {
+    transition-delay: .6s;
+}
+
+#page-preloader-line {
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    right: 100%;
+    border-bottom: 1px solid rgba(74, 74, 74, .2);
+    transition: all 1.7s .1s cubic-bezier(0.770, 0.000, 0.300, 1.000);
+}
+
+body.page-fade-in #page-preloader-line {
+    right: 100px;
+}
+
+body.preload-fade-out #page-preloader-line {
+    left: calc(100% - 100px);
+    transition: left 1s cubic-bezier(0.770, 0.000, 0.300, 1.000), right 1s cubic-bezier(0.770, 0.000, 0.300, 1.000), opacity .4s .3s;
+    opacity: 0;
+}
+
+#bottom {
+    position: relative;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+#bottom-inside {
+    margin: 0px auto;
+    display: table;
+}
+
+.bottom-inside-each {
+    float: left;
+    margin: 35px 17px;
+    padding: 10px;
+}
+
+#bottom-inside-each-buttons {
+    position: absolute;
+    bottom: 33px;
+    right: 48px;
+}
+
+body.events-event #bottom-inside-each-buttons,
+body.artists-artist-works-work #bottom-inside-each-buttons,
+#bottom-inside-each-buttons-mobile {
+    display: none;
+}
+
+#bottom-inside-each-bloquo,
+#bottom-inside-each-sage {
+    float: left;
+    width: 33px;
+    height: 43px;
+    background-image: url('/img/logo-bloquo.png');
+    background-size: 13px 23px;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: .3;
+}
+
+#bottom-inside-each-sage {
+    background-image: url('/img/logo-sage.png');
+    background-size: 14px 23px;
+}
+
+#bottom-inside-each-circle {
+    margin-top: 21px;
+    margin-left: 1px;
+    float: left;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #1A1818;
+    opacity: .3;
+}
+
+body.projects #bottom-inside-each-bloquo,
+body.projects #bottom-inside-each-sage {
+    background-image: url('/img/logo-bloquo-white.png');
+    opacity: .2;
+}
+
+body.projects #bottom-inside-each-sage {
+    background-image: url('/img/logo-sage-white.png');
+}
+
+body.projects #bottom-inside-each-circle {
+    background-color: #EEECEA;
+    opacity: .2;
+}
+
+#bottom-back-to-top {
+    display: none;
+}
+
+#newsletter {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto;
+    background-color: #988F8A;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    backface-visibility: hidden;
+    transition: visibility 0s .6s, opacity .4 .2s;
+}
+
+body.newsletter #newsletter {
+    opacity: 1;
+    visibility: visible !important;
+    transition: visibility 0s, opacity .45s;
+}
+
+body.gallery #newsletter {
+    background-color: #8e847e;
+}
+
+#newsletter .page-inside {
+    max-width: 100%;
+    height: 100%;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0s;
+}
+
+body.newsletter #newsletter .page-inside {
+    opacity: 1;
+    transition: opacity .3s .3s;
+}
+
+#newsletter form {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#newsletter.subscribed #newsletter-input,
+#newsletter.subscribed #newsletter-submit {
+    pointer-events: none;
+}
+
+#newsletter-input {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    right: 15px;
+    margin-top: -38px;
+    width: calc(100% - 30px);
+    padding: 0px 24px 0px 24px;
+    height: 64px;
+    border-color: rgba(36, 36, 36, .3);
+    color: rgba(0, 0, 0, .3);
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    color: #1A1818;
+    transition: transform .5s, border-color .5s;
+}
+
+#newsletter.subscribed #newsletter-input {
+    transform: translateY(8px);
+    border-color: rgba(36, 36, 36, 0);
+}
+
+#newsletter-submit {
+    position: absolute;
+    left: 50%;
+    bottom: 33px;
+    padding: 12px;
+    margin-left: -47px;
+    width: 100px;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+    transition: opacity .5s;
+}
+
+#newsletter-close {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    width: 36px;
+    height: 36px;
+    margin-left: -18px;
+    transition: transform .5s, opacity .5s;
+}
+
+#newsletter.subscribed #newsletter-close {
+    transform: translateY(8px);
+}
+
+#newsletter-close:after,
+#newsletter-close:before {
+    content: '';
+    position: absolute;
+    top: 17px;
+    left: 11px;
+    width: 15px;
+    height: 2px;
+    background-color: #000;
+    transform: rotate(-45deg);
+}
+
+#newsletter-close:before {
+    transform: rotate(45deg);
+}
+
+#newsletter.subscribed #newsletter-submit {
+    opacity: 0;
+}
+
+#newsletter-message {
+    position: absolute;
+    top: 50%;
+    left: 42px;
+    right: 42px;
+    margin: 0px;
+    margin-top: 52px;
+    opacity: 0;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    transition: opacity .3s;
+}
+
+#newsletter-message.show {
+    opacity: 1;
+}
+
+#events2-container {
+    margin: 172px 100px 0px;
+    overflow: hidden;
+    padding-bottom: 30px;
+}
+
+.events2-event {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+}
+
+.events2-event-inside {
+    margin: 0px 100px 117px;
+}
+
+.events2-event-img {
+    overflow: hidden;
+}
+
+.events2-event-img-inside {
+    padding-top: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.events2-event-header {
+    margin: 42px 16px 0px;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 300;
+}
+
+.events2-event-date {
+    margin: 40px 60px 10px;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 700;
+}
+
+.events2-event-text {
+    margin: 2px 60px 0px;
+    line-height: 100%;
+}
+
+@keyframes rotating {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.rotating {
+    animation: rotating 60s linear infinite;
+}
+
+.events2-event-date,
+#artist-bottom-next-inside2 {
+    font-size: 35px;
+}
+
+.page-featured-artist,
+#page-preloader-inside p,
+.events2-event-header,
+.home4-artist-country,
+#events1-header {
+    font-size: 19px;
+}
+
+.home3-info-button,
+#home4-button,
+#home5-button {
+    font-size: 18px;
+}
+
+.page-input-each {
+    position: relative;
+}
+
+.page-input-each-label {
+    position: absolute;
+    top: 50%;
+    pointer-events: none;
+    transform: translateY(-12px);
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: #000;
+    transition: color .3s, transform .3s;
+}
+
+.page-input-each.filled .page-input-each-label {
+    color: #988F8A;
+    transform: translateY(-42px);
+}
+
+.page-input-each.message.filled .page-input-each-label {
+    transform: translateY(-97px);
+}
+
+#page-input-form input,
+#page-input-form textarea {
+    padding: 0px;
+    height: 110px;
+    border-bottom-color: #CDCBCA;
+    font-size: 25px;
+    transition: color .3s, padding-top .3s;
+}
+
+#page-input-form .page-input-each.filled input {
+    padding-top: 20px;
+}
+
+.page-input-each.message {
+    height: 220px;
+}
+
+#page-input-form textarea {
+    padding: 40px 0px 0px;
+    margin-top: 50px;
+    height: 170px;
+    border-bottom: 4px solid #CDCBCA;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 166%;
+}
+
+#page-input-form .page-input-each.filled textarea {
+    padding-top: 0px;
+}
+
+.sent #page-input-form input,
+.sent #page-input-form textarea,
+.sent #page-input-submit {
+    pointer-events: none;
+}
+
+.sent .contact-text,
+.sent .artists-work-enquire-text,
+.sent #page-input-form input,
+.sent #page-input-form textarea {
+    color: #988F8A;
+}
+
+.contact-text,
+.artists-work-enquire-text {
+    width: 80%;
+    max-width: 422px;
+    line-height: 125%;
+}
+
+#contact3 .contact-text,
+.artists-work-enquire-text {
+    transition: color .3s;
+}
+
+#page-input-error {
+    float: left;
+    margin-top: 47px;
+    opacity: 0;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    transition: opacity .3s;
+}
+
+#page-input-error.show {
+    opacity: 1;
+}
+
+#page-input-submit {
+    float: right;
+    display: table;
+    position: relative;
+    margin-top: 13px;
+    padding: 10px 0px;
+    cursor: pointer;
+}
+
+#page-input-submit p {
+    margin: 21px 17px;
+    float: right;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 135%;
+}
+
+#page-input-submit-right {
+    position: relative;
+    float: right;
+    width: 66px;
+    height: 66px;
+    background-color: #988F8A;
+    border-radius: 50%;
+    transition: background-color .3s, opacity .3s;
+}
+
+.sent #page-input-submit-right {
+    background-color: #D4CFCC;
+}
+
+#page-input-submit .page-right-pages-inside {
+    top: 27px;
+    left: 27px;
+    border-color: #fff;
+    transform: rotate(135deg);
+}
+
+@media screen and (max-width: 1600px) {
+    #page-see-more-image {
+        margin-right: 58px;
+        width: 348px;
+        height: 523px;
+    }
+    #page-see-more-inside {
+        top: 52px;
+        bottom: 52px;
+    }
+    #page-see-more-text {
+        font-size: 120px;
+    }
+    #events2-container {
+        margin-left: 115px;
+        margin-right: 115px;
+    }
+    .events2-event-inside {
+        margin: 0px 65px 117px;
+    }
+    #gallery-container,
+    .gallery-each {
+        height: 710px;
+    }
+}
+
+@media screen and (max-width: 1439px) {
+    body,
+    #menu,
+    #home1,
+    #gallery1,
+    #page-left,
+    #page-right {
+        min-height: 650px;
+    }
+    body,
+    p,
+    input,
+    textarea,
+    select {
+        font-size: 38px;
+    }
+    #logo {
+        left: 30px;
+        top: 51px;
+    }
+    #menu-button {
+        top: 39px;
+        right: 17px;
+    }
+    .menu-line:nth-child(1) {
+        left: 145px;
+    }
+    .menu-line:nth-child(2) {
+        left: calc(25% + 72px);
+    }
+    .menu-line:nth-child(4) {
+        left: calc(75% - 59px);
+    }
+    .menu-line:nth-child(5) {
+        right: 118px;
+    }
+    #menu-buttons,
+    #menu-info {
+        margin-top: -267px;
+        height: 535px;
+    }
+    #menu-buttons {
+        margin-left: 208px;
+    }
+    .menu-button {
+        padding: 17px 7px;
+        font-size: 60px;
+    }
+    #menu-info {
+        margin-left: 74px;
+    }
+    #menu-info-inside {
+        padding-bottom: 28px;
+    }
+    .menu-info-text {
+        font-size: 39px;
+    }
+    #page-left,
+    #page-right {
+        width: 118px;
+    }
+    .page-right-button {
+        margin-left: 24px;
+    }
+    .page-inside {
+        padding: 0px 118px;
+    }
+    .page-inside-inside {
+        padding: 0px 83px;
+    }
+    .page-top-title,
+    .home1-info-title,
+    .home4-artist-name,
+    .artists-artist-title,
+    .projects-project-title,
+    #events1-title {
+        font-size: 110px !important;
+    }
+    .page-top-title {
+        padding-top: 76px;
+        max-width: 530px;
+        height: 332px;
+    }
+    .page-title,
+    #artists-catalogue .page-top-title,
+    #projects-catalogue .page-top-title,
+    #events-list .page-top-title {
+        font-size: 76px !important;
+    }
+    .page-title {
+        margin-top: 102px;
+        padding-bottom: 34px;
+    }
+    .page-title:after {
+        width: 85px;
+        margin-left: -42px;
+    }
+    #artists-catalogue .page-top-title,
+    #projects-catalogue .page-top-title,
+    #events-list .page-top-title {
+        padding-top: 116px;
+    }
+    .page-top-city {
+        margin-top: 22px;
+    }
+    .page-text-header {
+        margin-top: 95px;
+        margin-bottom: 34px;
+    }
+    .page-featured-img {
+        margin-top: 51px;
+    }
+    .page-featured-title {
+        margin-top: 32px;
+        font-size: 38px;
+    }
+    .page-featured-artist {
+        margin-top: 12px;
+        margin-bottom: 100px;
+        font-size: 18px;
+    }
+    #page-see-more-image {
+        margin-right: 50px;
+        width: 296px;
+        height: 444px;
+    }
+    #page-see-more-inside {
+        top: 43px;
+        bottom: 43px;
+    }
+    #page-see-more-inside-inside {
+        padding-left: 83px;
+    }
+    #page-see-more-text {
+        font-size: 100px;
+    }
+    #events2-container {
+        margin-top: 146px;
+        padding-bottom: 24px;
+    }
+    .events2-event-inside {
+        margin: 0px 64px 94px;
+    }
+    .events2-event-header {
+        margin-top: 38px;
+    }
+    .events2-event-date {
+        margin-top: 36px;
+    }
+    .events2-event-date,
+    #artist-bottom-next-inside2 {
+        font-size: 32px;
+    }
+    .events2-event-date,
+    .events2-event-text {
+        margin-left: 51px;
+        margin-right: 51px;
+    }
+    .events2-event-text {
+        font-size: 40px;
+    }
+    #gallery-container,
+    .gallery-each {
+        height: 640px;
+    }
+    #gallery-left {
+        left: 118px;
+    }
+    #gallery-right {
+        right: 118px;
+    }
+    #newsletter-input {
+        height: 57px;
+        font-size: 27px;
+    }
+    #newsletter-message {
+        margin-top: 40px;
+    }
+    #bottom-inside-each-buttons {
+        right: 40px;
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    body,
+    #menu,
+    #home1,
+    #gallery1,
+    #page-left,
+    #page-right {
+        min-height: 600px;
+    }
+    body.projects #page-preloader-inside {
+        height: 360px;
+        margin-top: -180px;
+    }
+    body.artists #page-preloader-inside,
+    body.gallery #page-preloader-inside,
+    body.contact #page-preloader-inside {
+        height: 315px;
+        margin-top: -158px;
+    }
+    body.works #page-preloader-inside {
+        height: 225px;
+        margin-top: -112px;
+    }
+    body.events #page-preloader-inside {
+        height: 270px;
+        margin-top: -135px;
+    }
+    body,
+    p,
+    input,
+    textarea,
+    select {
+        font-size: 32px;
+    }
+    #logo {
+        left: 23px;
+        top: 46px;
+    }
+    #menu-button {
+        top: 35px;
+        right: 11px;
+    }
+    .menu-line:nth-child(1) {
+        left: 133px;
+    }
+    .menu-line:nth-child(2) {
+        left: calc(25% + 72px);
+    }
+    .menu-line:nth-child(4) {
+        left: calc(75% - 52px);
+    }
+    .menu-line:nth-child(5) {
+        right: 104px;
+    }
+    #menu-buttons,
+    #menu-info {
+        margin-top: -222px;
+        height: 445px;
+    }
+    #menu-buttons {
+        margin-left: 188px;
+    }
+    .menu-button {
+        padding: 14px 6px;
+        font-size: 50px;
+    }
+    #menu-info {
+        margin-left: 66px;
+    }
+    #menu-info-inside {
+        padding-bottom: 22px;
+    }
+    .menu-info-text {
+        margin-bottom: 42px;
+        width: 360px;
+        font-size: 35px;
+    }
+    #page-left,
+    #page-right {
+        width: 104px;
+    }
+    .page-right-button {
+        margin-left: 23px;
+    }
+    .page-inside {
+        padding: 0px 104px;
+    }
+    .page-inside-inside {
+        padding: 0px 70px;
+    }
+    .page-top-title,
+    .home1-info-title,
+    .home4-artist-name,
+    .artists-artist-title,
+    .projects-project-title,
+    #events1-title {
+        font-size: 94px !important;
+    }
+    .page-top-title {
+        padding-top: 65px;
+        max-width: 460px;
+        height: 296px;
+    }
+    .page-title,
+    #artists-catalogue .page-top-title,
+    #projects-catalogue .page-top-title,
+    #events-list .page-top-title {
+        font-size: 65px !important;
+    }
+    .page-title {
+        margin-top: 92px;
+        padding-bottom: 29px;
+    }
+    .page-title:after {
+        width: 72px;
+        margin-left: -36px;
+    }
+    #artists-catalogue .page-top-title,
+    #projects-catalogue .page-top-title,
+    #events-list .page-top-title {
+        padding-top: 100px;
+    }
+    .page-top-city {
+        margin-top: 18px;
+        font-size: 19px;
+    }
+    .page-top-image {
+        margin-top: 74px;
+    }
+    .page-text-header {
+        margin-top: 81px;
+        margin-bottom: 31px;
+    }
+    .page-featured-img {
+        margin-top: 43px;
+    }
+    .page-featured-title {
+        margin-top: 27px;
+        font-size: 35px;
+    }
+    .page-featured-artist {
+        margin-top: 10px;
+        margin-bottom: 86px;
+        font-size: 17px;
+    }
+    .page-featured-artist,
+    #page-preloader-inside p,
+    .events2-event-header,
+    .home4-artist-country,
+    #events1-header {
+        font-size: 18px;
+    }
+    #page-see-more-inside {
+        top: 37px;
+        bottom: 37px;
+    }
+    #page-see-more-inside-inside {
+        padding-left: 70px;
+    }
+    #page-see-more-text {
+        font-size: 85px;
+    }
+    .home3-info-button,
+    #home4-button,
+    #home5-button {
+        font-size: 17px;
+    }
+    #events2-container {
+        margin: 124px 100px 0px;
+        padding-bottom: 20px;
+    }
+    .events2-event-inside {
+        margin: 0px 46px 94px;
+    }
+    .events2-event-header {
+        margin-top: 34px;
+    }
+    .events2-event-date {
+        margin-top: 32px;
+    }
+    .events2-event-date,
+    #artist-bottom-next-inside2 {
+        font-size: 28px;
+    }
+    .events2-event-date,
+    .events2-event-text {
+        margin-left: 43px;
+        margin-right: 43px;
+    }
+    .events2-event-text {
+        font-size: 36px;
+    }
+    #gallery-container,
+    .gallery-each {
+        height: 575px;
+    }
+    #gallery-left {
+        left: 104px;
+    }
+    #gallery-right {
+        right: 104px;
+    }
+    #newsletter-input {
+        height: 52px;
+        font-size: 24px;
+    }
+    #newsletter-message {
+        margin-top: 37px;
+    }
+    #bottom-inside-each-buttons {
+        right: 33px;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    #page-see-more-image {
+        margin-right: 42px;
+        width: 252px;
+        height: 378px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    body,
+    #menu,
+    #home1,
+    #gallery1,
+    #page-left,
+    #page-right {
+        min-height: 550px;
+    }
+    body.projects #page-preloader-inside {
+        height: 336px;
+        margin-top: -168px;
+    }
+    body.artists #page-preloader-inside,
+    body.gallery #page-preloader-inside,
+    body.contact #page-preloader-inside {
+        height: 294px;
+        margin-top: -147px;
+    }
+    body.works #page-preloader-inside {
+        height: 212px;
+        margin-top: -106px;
+    }
+    body.events #page-preloader-inside {
+        height: 252px;
+        margin-top: -126px;
+    }
+    body,
+    p,
+    input,
+    textarea,
+    select {
+        font-size: 27px;
+    }
+    #logo,
+    #menu-button,
+    #page-left,
+    #page-right {
+        position: absolute;
+    }
+    #page-left,
+    #page-right {
+        overflow: hidden;
+    }
+    #logo {
+        top: 42px;
+    }
+    #menu-button {
+        top: 30px;
+    }
+    .menu-line:nth-child(1) {
+        left: 125px;
+    }
+    .menu-line:nth-child(2),
+    .menu-line:nth-child(4) {
+        display: none;
+    }
+    .menu-line:nth-child(5) {
+        right: 96px;
+    }
+    #menu-buttons,
+    #menu-info {
+        height: 390px;
+        margin-top: -195px;
+    }
+    #menu-buttons {
+        margin-left: 150px;
+    }
+    .menu-button {
+        padding: 13px 5px;
+        font-size: 43px;
+    }
+    #menu-info {
+        margin-left: 40px;
+    }
+    #menu-info-inside {
+        padding-bottom: 19px;
+    }
+    .menu-info-text {
+        margin-bottom: 37px;
+        width: 280px;
+        font-size: 28px;
+    }
+    #page-left,
+    #page-right {
+        display: none;
+    }
+    body.home #page-left,
+    body.home #page-right {
+        width: 96px;
+        display: block;
+    }
+    #page-right-pages {
+        margin-top: -67px;
+    }
+    #page-right-pages-cur {
+        margin: 16px auto;
+    }
+    .page-inside {
+        padding: 0px 50px;
+    }
+    .page-inside-inside {
+        padding: 0px 45px;
+    }
+    .page-top-title,
+    .home1-info-title,
+    .home4-artist-name,
+    .artists-artist-title,
+    .projects-project-title,
+    #events1-title {
+        font-size: 80px !important;
+    }
+    .page-top-title {
+        max-width: 400px;
+        height: 266px;
+    }
+    .page-title,
+    #artists-catalogue .page-top-title,
+    #projects-catalogue .page-top-title,
+    #events-list .page-top-title {
+        font-size: 55px !important;
+    }
+    .page-top-city {
+        display: none;
+    }
+    .page-title {
+        margin-top: 83px;
+        padding-bottom: 25px;
+    }
+    .page-title:after {
+        width: 62px;
+        margin-left: -31px;
+    }
+    .page-top-image {
+        margin-top: 68px;
+    }
+    #artists-catalogue .page-top-title,
+    #projects-catalogue .page-top-title,
+    #events-list .page-top-title {
+        padding-top: 84px;
+    }
+    .page-text-header {
+        margin-top: 70px;
+        margin-bottom: 27px;
+        font-size: 17px;
+    }
+    .page-featured-img {
+        margin-top: 37px;
+    }
+    .page-featured-title {
+        margin-top: 23px;
+        font-size: 32px;
+    }
+    .page-featured-artist {
+        margin-top: 9px;
+        margin-bottom: 74px;
+        font-size: 16px;
+    }
+    #page-see-more-image {
+        margin-right: 50px;
+        width: 296px;
+        height: 444px;
+    }
+    #page-see-more-inside {
+        top: 30px;
+        bottom: 30px;
+    }
+    #page-see-more-inside-inside {
+        padding-left: 45px;
+    }
+    #page-see-more-text {
+        font-size: 75px;
+    }
+    .page-featured-artist,
+    #page-preloader-inside p,
+    .events2-event-header,
+    .home4-artist-country,
+    #events1-header {
+        font-size: 17px;
+    }
+    .bottom-inside-each {
+        margin: 35px 11px;
+    }
+    #events2-container {
+        margin: 106px 40px 0px;
+        padding-bottom: 15px;
+    }
+    .events2-event-inside {
+        margin: 0px 40px 75px;
+    }
+    .events2-event-header {
+        margin-top: 30px;
+    }
+    .events2-event-date {
+        margin-top: 30px;
+    }
+    .events2-event-date,
+    #artist-bottom-next-inside2 {
+        font-size: 25px;
+    }
+    .events2-event-date,
+    .events2-event-text {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+    .events2-event-text {
+        font-size: 32px;
+    }
+    #gallery-container,
+    .gallery-each {
+        height: 450px;
+    }
+    #gallery-left,
+    #gallery-right {
+        margin-top: -26px;
+        width: 53px;
+        height: 53px;
+    }
+    #gallery-left {
+        left: 30px;
+    }
+    #gallery-right {
+        right: 30px;
+    }
+    #gallery-container .page-right-pages-inside {
+        top: 22px;
+        left: 25px;
+    }
+    #gallery-container #gallery-right .page-right-pages-inside {
+        left: 23px;
+    }
+    .page-right-pages-inside {
+        width: 8px;
+        height: 8px;
+    }
+    #newsletter-input {
+        height: 46px;
+        font-size: 22px;
+    }
+    #newsletter-submit {
+        font-size: 17px;
+    }
+    #newsletter-message {
+        margin-top: 30px;
+    }
+    .page-input-each-label {
+        font-size: 17px;
+    }
+    #page-input-form input,
+    #page-input-form textarea {
+        height: 100px;
+        font-size: 22px;
+    }
+    .page-input-each.message {
+        height: 177px;
+    }
+    #page-input-form textarea {
+        padding-top: 36px;
+        margin-top: 45px;
+        height: 136px;
+    }
+    .page-input-each.message.filled .page-input-each-label {
+        transform: translateY(-68px);
+    }
+    .page-input-each.filled .page-input-each-label {
+        transform: translateY(-38px);
+    }
+    #page-input-error {
+        margin-top: 41px;
+    }
+    #page-input-submit p {
+        margin-top: 16px;
+    }
+    #page-input-submit-right {
+        width: 53px;
+        height: 53px;
+    }
+    #page-input-submit p {
+        font-size: 17px;
+    }
+    #page-input-submit .page-right-pages-inside {
+        top: 22px;
+        left: 22px;
+    }
+}
+
+@media screen and (max-width: 1103px) {
+    #bottom-inside-each-buttons {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 896px) {
+    .page-title {
+        margin-top: 115px;
+    }
+    #bottom-inside-each-year {
+        display: none;
+    }
+    #page-see-more-image {
+        margin-right: 30px;
+        width: 212px;
+        height: 323px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body,
+    #menu {
+        min-height: 550px;
+    }
+    body,
+    p,
+    input,
+    textarea,
+    select {
+        font-size: 34px;
+    }
+    #logo {
+        top: 34px;
+    }
+    #menu-button {
+        top: 22px;
+        right: 2px;
+    }
+    .menu-line {
+        display: none;
+    }
+    #menu-buttons {
+        width: 208px;
+        left: 50%;
+        margin-top: -180px;
+        margin-left: -103px;
+        text-align: center;
+    }
+    #menu-info {
+        display: none;
+    }
+    #page-right {
+        width: 84px;
+    }
+    .page-inside {
+        padding: 0px 40px;
+    }
+    .page-inside-inside {
+        padding: 0px 30px;
+    }
+    .page-title,
+    #artists-catalogue .page-top-title,
+    #projects-catalogue .page-top-title,
+    #events-list .page-top-title {
+        font-size: 47px !important;
+    }
+    .page-title {
+        padding-bottom: 20px;
+    }
+    .page-text-header {
+        margin-top: 60px;
+        margin-bottom: 25px;
+    }
+    .page-featured-img {
+        margin-top: 31px;
+    }
+    .page-featured-title {
+        margin-top: 20px;
+        font-size: 28px;
+    }
+    .page-featured-artist {
+        margin-top: 14px;
+        margin-bottom: 32px;
+    }
+    #events2-container {
+        margin: 80px 24px 0px;
+        padding-bottom: 12px;
+    }
+    .events2-event-inside {
+        margin: 0px 24px 60px;
+    }
+    .events2-event-header {
+        margin-top: 27px;
+    }
+    .events2-event-date {
+        margin-top: 26px;
+    }
+    .events2-event-date,
+    #artist-bottom-next-inside2 {
+        font-size: 23px;
+    }
+    .events2-event-header,
+    .events2-event-date,
+    .events2-event-text {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .events2-event-text {
+        font-size: 30px;
+    }
+    #gallery-container,
+    .gallery-each {
+        height: 300px;
+    }
+    #page-top-mobile-button,
+    .page-bottom-mobile-button {
+        padding: 10px;
+        font-family: 'Catamaran', sans-serif;
+        font-size: 17px;
+    }
+    #page-bottom-mobile {
+        display: block;
+        padding: 67px 20px 57px;
+        overflow: hidden;
+    }
+    .page-bottom-mobile-button {
+        float: left;
+        font-weight: 700;
+    }
+    #page-bottom-mobile-line {
+        float: left;
+        margin: 20px 0px 0px 10px;
+        width: calc(100% - 162px);
+        border-bottom: 1px solid #CDCBCA;
+    }
+    #page-bottom-mobile-button-next {
+        float: right;
+    }
+    #newsletter-input {
+        height: 42px;
+        font-size: 20px;
+    }
+    #page-input-form input,
+    #page-input-form textarea {
+        height: 90px;
+        font-size: 20px;
+    }
+    .page-input-each.message {
+        height: 155px;
+    }
+    #page-input-form textarea {
+        margin-top: 41px;
+        height: 118px;
+    }
+    .page-input-each.message.filled .page-input-each-label {
+        transform: translateY(-66px);
+    }
+    .page-input-each.filled .page-input-each-label {
+        transform: translateY(-34px);
+    }
+    #page-input-error {
+        margin-top: 55px;
+    }
+    #page-input-submit {
+        margin-top: 27px;
+    }
+    .bottom-inside-each {
+        display: none;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #bottom-inside-each-buttons {
+        display: none;
+    }
+    #bottom-inside-each-year,
+    #bottom-inside-each-buttons-mobile,
+    #bottom-back-to-top {
+        display: table;
+        position: relative;
+    }
+    #bottom-inside-each-buttons-mobile,
+    #bottom-back-to-top {
+        margin-top: 0px;
+    }
+    #bottom-inside-each-year {
+        margin-bottom: -15px;
+    }
+    #artists-catalogue #bottom-inside-each-year,
+    #projects-catalogue #bottom-inside-each-year,
+    #events-list #bottom-inside-each-year {
+        margin-bottom: 35px;
+    }
+    #bottom-inside-each-buttons-mobile {
+        margin-bottom: 10px;
+    }
+    #bottom-back-to-top {
+        margin-bottom: 43px;
+        font-weight: 400;
+    }
+    #bottom-back-to-top:after {
+        content: '';
+        position: absolute;
+        bottom: 5px;
+        left: 10px;
+        right: 10px;
+        border-bottom: 1px solid #1A1818;
+    }
+    body.projects #bottom-back-to-top:after {
+        border-color: #EEECEA;
+    }
+    body.projects #bottom-back-to-top {}
+}
+
+@media screen and (max-width: 656px) {
+    #page-see-more {
+        margin-bottom: 100px;
+    }
+    #page-see-more:before {
+        content: '';
+        position: absolute;
+        top: 20%;
+        right: calc(50% - 150px);
+        bottom: 0px;
+        left: calc(50% - 150px);
+        border: 1px solid rgba(26, 24, 24, .3);
+    }
+    #page-see-more-image {
+        float: none;
+        margin: 32px auto;
+    }
+    #page-see-more-inside {
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        border: none;
+    }
+    #page-see-more-inside-inside {
+        padding-left: 0px;
+    }
+    #page-see-more-text {
+        padding-bottom: 46px !important;
+        font-size: 55px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 543px) {
+    body,
+    #menu,
+    #home1,
+    #gallery1,
+    #page-left,
+    #page-right {
+        min-height: 430px;
+    }
+    body.projects #page-preloader-inside {
+        height: 296px;
+        margin-top: -148px;
+    }
+    body.artists #page-preloader-inside,
+    body.gallery #page-preloader-inside,
+    body.contact #page-preloader-inside {
+        height: 260px;
+        margin-top: -130px;
+    }
+    body.works #page-preloader-inside {
+        height: 188px;
+        margin-top: -94px;
+    }
+    body.events #page-preloader-inside {
+        height: 222px;
+        margin-top: -111px;
+    }
+    #page-preloader-inside {
+        width: 90px;
+        margin-left: -45px;
+    }
+    #page-preloader-line {
+        left: 20px;
+    }
+    body.page-fade-in #page-preloader-line {
+        right: 20px;
+    }
+    body.preload-fade-out #page-preloader-line {
+        left: calc(100% - 20px);
+    }
+    body,
+    p,
+    input,
+    textarea,
+    select {
+        font-size: 28px;
+    }
+    #logo {
+        left: 25px;
+        top: 25px;
+        width: 46px;
+        height: 46px;
+    }
+    #menu-button {
+        top: 7px;
+        right: 0px;
+    }
+    #menu-button-inside {
+        margin-top: 25px;
+        height: 21px;
+    }
+    #menu-buttons,
+    #menu-info {
+        height: 295px;
+        margin-top: -130px;
+    }
+    .menu-button {
+        padding: 10px 4px;
+        font-size: 32px;
+    }
+    #page-left,
+    #page-right {
+        width: 94px;
+    }
+    .page-inside {
+        padding: 0px 30px;
+    }
+    .page-inside-inside {
+        padding: 0px 15px;
+    }
+    #menu-button p,
+    #page-left,
+    #page-right,
+    #page-right-bg,
+    #page-right-pages-cur {
+        font-size: 16px;
+    }
+    #page-top-mobile {
+        display: block;
+        padding: 29px 0px 29px 80px;
+    }
+    #page-top-mobile-button,
+    .page-bottom-mobile-button {
+        font-size: 16px;
+    }
+    #page-bottom-mobile {
+        padding: 47px 5px 37px;
+    }
+    #page-bottom-mobile-line {
+        margin: 20px 0px 0px 10px;
+        width: calc(100% - 162px);
+    }
+    .page-top-title,
+    .home1-info-title,
+    .home4-artist-name,
+    .artists-artist-title,
+    .projects-project-title {
+        font-size: 55px !important;
+    }
+    .page-top-title {
+        max-width: 270px;
+        height: 200px;
+        line-height: 100%;
+    }
+    .page-title,
+    #artists-catalogue .page-top-title,
+    #projects-catalogue .page-top-title,
+    #events-list .page-top-title {
+        font-size: 38px !important;
+        letter-spacing: .3em;
+    }
+    .page-top-image {
+        margin-left: -45px;
+        margin-right: -45px;
+        width: auto;
+    }
+    .page-title {
+        margin-top: 97px;
+        padding-bottom: 16px;
+        letter-spacing: .3em;
+    }
+    .page-title:after {
+        width: 52px;
+        margin-left: -26px;
+    }
+    .page-text-header {
+        margin-top: 52px;
+        margin-bottom: 22px;
+        font-size: 16px;
+    }
+    .page-featured {
+        width: 100%;
+    }
+    #page-see-more {
+        margin-bottom: 88px;
+    }
+    #page-see-more-image {
+        margin: 23px auto;
+        width: 180px;
+        height: 270px;
+    }
+    #page-see-more:before {
+        right: 0px;
+        left: 0px;
+    }
+    #page-see-more-text {
+        font-size: 50px;
+    }
+    .page-featured-artist,
+    .events2-event-header,
+    .home3-info-button,
+    #home4-button,
+    #home5-button,
+    .home4-artist-country,
+    #events1-header {
+        font-size: 16px;
+    }
+    #page-preloader p {
+        font-size: 15px;
+    }
+    #events2-container {
+        margin: 50px 0px 0px;
+        padding-bottom: 0px;
+    }
+    .events2-event {
+        width: 100%;
+        padding-bottom: 10px;
+    }
+    .events2-event-inside {
+        margin: 0px 32px;
+    }
+    .events2-event-header {
+        text-align: center;
+    }
+    .events2-event-date,
+    #artist-bottom-next-inside2 {
+        font-size: 21px;
+    }
+    .events2-event-date {
+        margin-top: 24px;
+        margin-bottom: 3px;
+    }
+    .events2-event-date,
+    .events2-event-text {
+        margin-left: 26px;
+        margin-right: 26px;
+        text-align: center;
+    }
+    .events2-event-text {
+        margin-bottom: 57px;
+    }
+    #gallery-container,
+    .gallery-each {
+        height: 220px;
+    }
+    #gallery-left,
+    #gallery-right {
+        margin-top: -17px;
+        width: 34px;
+        height: 34px;
+    }
+    #gallery-left {
+        left: 15px;
+    }
+    #gallery-right {
+        right: 15px;
+    }
+    #gallery-left .page-right-pages-inside,
+    #gallery-right .page-right-pages-inside {
+        top: 13px;
+        left: 15px;
+    }
+    #gallery-container #gallery-right .page-right-pages-inside {
+        left: 13px
+    }
+    #newsletter .page-inside {
+        padding: 0px 20px;
+    }
+    #newsletter-input {
+        padding: 0px 15px;
+        width: calc(100% - 30px);
+        height: 52px;
+        font-size: 25px;
+    }
+    #newsletter-message {
+        left: 30px;
+        right: 30px;
+        margin-top: 32px;
+    }
+    .page-input-each-label {
+        font-size: 16px;
+    }
+    #page-input-form input,
+    #page-input-form textarea {
+        height: 80px;
+        font-size: 18px;
+    }
+    .page-input-each.message {
+        height: 143px;
+    }
+    #page-input-form textarea {
+        margin-top: 41px;
+        height: 106px;
+    }
+    .page-input-each.message.filled .page-input-each-label {
+        transform: translateY(-60px);
+    }
+    .page-input-each.filled .page-input-each-label {
+        transform: translateY(-30px);
+    }
+    #page-input-error {
+        margin-top: 43px;
+    }
+    #page-input-submit {
+        margin-top: 25px;
+    }
+    #page-input-submit p {
+        margin-top: 7px;
+    }
+    #page-input-submit-right {
+        width: 34px;
+        height: 34px;
+    }
+    #page-input-submit p {
+        font-size: 16px;
+    }
+    #page-input-submit .page-right-pages-inside {
+        top: 13px;
+        left: 13px;
+    }
+    body.events-event #bottom-inside,
+    body.artists-artist-works-work #bottom-inside,
+    #artists-catalogue #bottom-inside,
+    #projects-catalogue #bottom-inside {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and ( -moz-min-device-pixel-ratio: 1.5), only screen and ( -o-min-device-pixel-ratio: 2/1), only screen and ( min-device-pixel-ratio: 1.5), only screen and ( min-resolution: 2dppx) {
+    #logo:before {
+        background-image: url('/assets/icons/logo.png');
+    }
+    #logo:after {
+        background-image: url('/assets/icons/logo.png');
+    }
+    #bottom-inside-each-bloquo {
+        background-image: url('/img/logo-bloquo@2x.png');
+    }
+    #bottom-inside-each-sage {
+        background-image: url('/img/logo-sage@2x.png');
+    }
+    body.projects #bottom-inside-each-bloquo {
+        background-image: url('/img/logo-bloquo-white@2x.png');
+    }
+    body.projects #bottom-inside-each-sage {
+        background-image: url('/img/logo-sage-white@2x.png');
+    }
+}

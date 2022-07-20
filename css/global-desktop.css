@@ -1,0 +1,234 @@
+@media screen and (min-width: 768px) {
+    /* Menu */
+    .menu-button a,
+    #menu-info-text-event a,
+    .menu-info-text,
+    #menu-info-newsletter {
+        transition: color .5s;
+    }
+    .menu-button a:hover,
+    #menu-info-text-event:hover a,
+    .menu-info a:hover .menu-info-text,
+    #menu-info-newsletter:hover {
+        transition: color .25s;
+        color: #EEECEA;
+    }
+    #page-right-pages-prev,
+    #page-right-pages-next,
+    #page-input-submit,
+    .page-featured-title,
+    .page-featured-artist,
+    #page-see-more-text,
+    .bottom-inside-each,
+    #bottom-inside-each-bloquo,
+    #bottom-inside-each-sage,
+    .underscored,
+    #home1-scroll-inside,
+    #artist-website a,
+    .artists-catalogue-artist-title,
+    .artists-catalogue-artist-country,
+    .projects-catalogue-project-title,
+    .projects-catalogue-project-country,
+    #artists-work2-info-button-inside,
+    body.gallery .page-right-button .page-button-inside,
+    #gallery-left,
+    #gallery-right,
+    #events-event-registration3,
+    .events2-event-header,
+    .events2-event-date,
+    .events2-event-text,
+    .events-event-artists-each-name,
+    .events-event-artists-each-city,
+    .contact1-text a,
+    .contact1-button p,
+    .contact1-button .page-right-pages-inside,
+    .contact4-social a {
+        transition: opacity .3s;
+    }
+    #logo:hover,
+    #menu-button:hover,
+    #page-right-pages-prev:hover,
+    #page-right-pages-next:hover,
+    .page-featured-img a:hover .page-featured-title,
+    .page-featured-img a:hover .page-featured-artist,
+    #page-see-more:hover #page-see-more-text,
+    .bottom-inside-each:not(#bottom-inside-each-year):hover,
+    .underscored:hover,
+    #home1-scroll:hover #home1-scroll-inside,
+    #artist-website a:hover,
+    #artists-left-back:hover,
+    #artists-left-catalogue:hover,
+    #artists-scroll:hover,
+    body.artists-artist:not(.transition-works) #artist-right-works:hover,
+    body.artists-artist-works:not(.transition-profile) #artists-left-profile:hover,
+    #artists-work-previous:hover,
+    #artists-work-next:hover,
+    .artists-catalogue-artist a:hover .artists-catalogue-artist-title,
+    .artists-catalogue-artist a:hover .artists-catalogue-artist-country,
+    .projects-catalogue-project a:hover .projects-catalogue-project-title,
+    .projects-catalogue-project a:hover .projects-catalogue-project-country,
+    #gallery1-scroll:hover,
+    body.gallery .page-right-button:hover .page-button-inside,
+    #events-right-list:hover,
+    #events-scroll:hover,
+    #events-event-registration3:hover,
+    #events-event-previous:hover,
+    #events-event-next:hover,
+    .events2-event-inside:hover .events2-event-header,
+    .events2-event-inside:hover .events2-event-date,
+    .events2-event-inside:hover .events2-event-text,
+    #events-event-materials a:hover .events-event-artists-each-name,
+    #events-event-materials a:hover .events-event-artists-each-city,
+    #events-event-artists a:hover .events-event-artists-each-name,
+    #events-event-artists a:hover .events-event-artists-each-city,
+    .contact1-button:hover p,
+    .contact1-button:hover .page-right-pages-inside,
+    .contact1-text a:hover,
+    .contact4-social a:hover {
+        opacity: .6;
+    }
+    #gallery-left:hover,
+    #gallery-right:hover,
+    #page-input-submit-right:hover,
+    #artists-work2-info-button-inside:hover {
+        opacity: 0;
+    }
+    .underscored:after {
+        transform: scaleY(1);
+    }
+    #bottom-inside-each-bloquo:hover,
+    #bottom-inside-each-sage:hover {
+        opacity: 1;
+    }
+    @keyframes underscored {
+        0% {
+            transform: scaleX(1);
+            transform-origin: right center;
+        }
+        35% {
+            transform: scaleX(0);
+            transform-origin: right center;
+        }
+        65% {
+            transform: scaleX(0);
+            transform-origin: left center;
+        }
+        100% {
+            transform: scaleX(1);
+            transform-origin: left center;
+        }
+    }
+    .underscored:hover:after {
+        animation: underscored .8s linear;
+    }
+    #page-see-more-image-inside,
+    .page-featured-img-inside-inside,
+    .artists-catalogue-artist-img-inside,
+    .projects-catalogue-project-img-inside,
+    .events2-event-img-inside {
+        transition: transform 2s;
+    }
+    #page-see-more:hover #page-see-more-image-inside,
+    .page-featured-img a:hover .page-featured-img-inside-inside,
+    .artists-catalogue-artist a:hover .artists-catalogue-artist-img-inside,
+    .projects-catalogue-project a:hover .projects-catalogue-project-img-inside,
+    .events2-event-inside:hover .events2-event-img-inside {
+        transform: scale(1.05);
+        transition: transform 3.5s;
+    }
+    /* Home */
+    #home4.hover .home4-artist.selected {
+        z-index: 1;
+    }
+    .home4-artist-country,
+    .home4-artist-name {
+        transition: opacity .3s, color .3s;
+    }
+    #home4.hover .home4-artist-country,
+    #home4.hover .home4-artist-name {
+        opacity: .1;
+    }
+    #home4.hover .home4-artist.selected .home4-artist-country,
+    #home4.hover .home4-artist.selected .home4-artist-name {
+        opacity: 1;
+        color: #988F8A;
+    }
+    #home4 .home4-line {
+        transition: border-color .3s;
+    }
+    #home4.hover .home4-line {
+        border-color: rgba(190, 190, 190, .3);
+    }
+    .home4-artist-img {
+        position: absolute;
+        top: 50%;
+        left: 0px;
+        width: 520px;
+        height: 700px;
+        margin-top: -350px;
+        opacity: 0;
+        background-size: cover;
+        pointer-events: none;
+    }
+    #home4.hover .home4-artist.selected .home4-artist-img {
+        opacity: 1;
+    }
+    /* Artist */
+    #artist-bottom-next:hover .page-top-image {
+        transform: translateY(-105px);
+    }
+    #artist-bottom-next:hover #artist-bottom-next-text {
+        transition: transform .2s;
+        transform: translateY(-22px);
+    }
+    #artist-bottom-next:hover #artist-bottom-next-line {
+        transition: transform .2s, height .2s;
+        height: 0px;
+        transform: translateY(-22px);
+    }
+    #artist-bottom-next:hover #artist-bottom-next-inside2 {
+        transition: opacity .3s .15s;
+        opacity: 1;
+    }
+    /* Artist Work */
+    .artists-work5-button-photo:hover {
+        background-color: rgba(152, 143, 138, .8);
+    }
+    .artists-work5-button-photo:hover .artists-work5-button-photo-inside {
+        border-color: #EEECEA;
+    }
+    /* Works */
+    .works-filters-artist:hover {
+        color: #EEECEA;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+    .home4-artist-img {
+        width: 442px;
+        height: 595px;
+        margin-top: -295px;
+    }
+    #artist-bottom-next:hover .page-top-image {
+        transform: translateY(-95px);
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+    .home4-artist-img {
+        width: 375px;
+        height: 506px;
+        margin-top: -253px;
+    }
+    #artist-bottom-next:hover .page-top-image {
+        transform: translateY(-76px);
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .home4-artist-img {
+        width: 320px;
+        height: 430px;
+        margin-top: -215px;
+    }
+}
