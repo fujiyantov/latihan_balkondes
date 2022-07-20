@@ -2,8 +2,6 @@ let startedData;
 getData();
 
 async function getData() {
-    // const url = "https://gasken2.free.beeceptor.com"
-    // const url = "https://balkondes1.free.beeceptor.com/"
     // const url = "http://127.0.0.1:8000/api/collections"
     const url = "https://dm.fujiyantov.id/api/collections"
     const response = await fetch(url)
