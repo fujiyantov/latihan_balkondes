@@ -1681,7 +1681,8 @@ video::-webkit-media-text-track-display {
         vertical-align: top;
         width: 30%; }
         .controls-navPrev::before, .controls-navNext::before {
-          background: url("../assets/icons/video_nav_arrow_mobile.svg") center/contain no-repeat;
+          /* background: url("../assets/icons/video_nav_arrow_mobile.svg") center/contain no-repeat; */
+          background: url("../assets/icons/video_next_arrow.png") center/contain no-repeat;
           content: '';
           display: block;
           height: 24px;
@@ -1966,7 +1967,8 @@ video::-webkit-media-text-track-display {
         opacity: 0;
         transform: translateY(10px); }
       .controls-cards .controls-next .controls-nextArrow {
-        background: url("../assets/icons/video_next_arrow.svg") center/contain no-repeat;
+        /* background: url("../assets/icons/video_next_arrow.svg") center/contain no-repeat; */
+        background: url("../assets/icons/video_next_arrow.png") center/contain no-repeat;
         cursor: pointer;
         height: 34px;
         opacity: 1;
@@ -5330,13 +5332,13 @@ header {
   background-image: url("../assets/icons/type_vrvideo.png"); }
 
 .typeIcon--culture {
-  background-image: url("../assets/icons/culture.png"); }
+  background-image: url("../assets/icons/type_culture.png"); }
 
 .typeIcon--product {
-  background-image: url("../assets/icons/product.png"); }
+  background-image: url("../assets/icons/type_product.png"); }
 
 .typeIcon--travel {
-  background-image: url("../assets/icons/travel.png"); }
+  background-image: url("../assets/icons/type_travel.png"); }
 
 .menu .menuItem-description, body, .video-js {
   font-family: 'AvenirNextLTW01-Regular', 'Avenir', sans-serif; }
