@@ -5292,7 +5292,10 @@ header {
 
 .typeIcon--video,
 .typeIcon--vrvideo,
-.typeIcon--streetview {
+.typeIcon--streetview,
+.typeIcon--culture,
+.typeIcon--product,
+.typeIcon--travel {
   background: center / contain no-repeat;
   height: 1.5em;
   margin-left: .5em;
@@ -5300,25 +5303,40 @@ header {
   @media only screen and (max-width: 768px) {
     .typeIcon--video,
     .typeIcon--vrvideo,
-    .typeIcon--streetview {
+    .typeIcon--streetview,
+    .typeIcon--culture,
+    .typeIcon--product,
+    .typeIcon--travel {
       height: 1.2em;
       margin-left: .2em;
       width: 1.2em; } }
   @media only screen and (max-width: 768px) and (orientation: portrait) {
     .typeIcon--video,
     .typeIcon--vrvideo,
-    .typeIcon--streetview {
+    .typeIcon--streetview,
+    .typeIcon--culture,
+    .typeIcon--product,
+    .typeIcon--travel {
       position: relative;
       top: 22px; } }
 
 .typeIcon--video {
-  background-image: url("../assets/icons/type_video.svg"); }
+  background-image: url("../assets/icons/type_video.png"); }
 
 .typeIcon--streetview {
-  background-image: url("../assets/icons/type_streetview.svg"); }
+  background-image: url("../assets/icons/type_streetview.png"); }
 
 .typeIcon--vrvideo {
-  background-image: url("../assets/icons/type_vrvideo.svg"); }
+  background-image: url("../assets/icons/type_vrvideo.png"); }
+
+.typeIcon--culture {
+  background-image: url("../assets/icons/culture.png"); }
+
+.typeIcon--product {
+  background-image: url("../assets/icons/product.png"); }
+
+.typeIcon--travel {
+  background-image: url("../assets/icons/travel.png"); }
 
 .menu .menuItem-description, body, .video-js {
   font-family: 'AvenirNextLTW01-Regular', 'Avenir', sans-serif; }
