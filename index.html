@@ -37,9 +37,9 @@
         ng-class="{'is-visible': headerVisible, 'is-enabled': headerEnabled}" ng-controller="headerController">
       <div class="header--left" ng-class="{'is-hidden': experienceActive}">
         <a class="logo" href="#" title="Brand" ng-click="goHome($event)">
-          <!-- <img src="./assets/icons/logo.png" style="height:90px!important; margin-top: -20px;" alt="Patagonia">
-          <img src="./assets/icons/logo-kementrian.svg" style="height:90px!important; margin-top: -20px;" alt="Patagonia"> -->
-          <!-- <img src="./assets/icons/logo-kbkm.png" style="height:90px!important; margin-top: -20px;" alt="Patagonia"> -->
+          <!-- <img src="./assets/icons/logo.png" style="height:90px!important; margin-top: -20px;" alt="kbkm">
+          <img src="./assets/icons/logo-kementrian.svg" style="height:90px!important; margin-top: -20px;" alt="kbkm"> -->
+          <!-- <img src="./assets/icons/logo-kbkm.png" style="height:90px!important; margin-top: -20px;" alt="kbkm"> -->
           <img src="./assets/icons/logo-kbkm.png"  style="height:48px!important;" alt="kbkm">
         </a>
         <div class="breadcrumbs"
@@ -87,10 +87,10 @@
         <div class="menuItem-content menuItem-content--base"
           >
           <div class="menuItem-meta">
-            <span class="menuItem-number">01</span>
+            <span class="menuItem-number">00</span>
             <div class="menuItem-bar"></div>
           </div>
-          <span class="menuItem-name">Maps</span>
+          <span class="menuItem-name">Peta Budaya</span>
         </div>
 
         <div class="menuItem-content menuItem-content--hover">
@@ -342,17 +342,17 @@
     ng-class="{'is-active': active, 'is-controls-visible': (controlActive && showControls || (currentState == 'paused'))}">
   <div class="intro-info" ng-class="{'is-active': (showLoading || showMeta), 'is-done': introEnded}">
     <div class="intro-loading" ng-class="{'is-active' : showLoading}">
-      <!-- <img class="loading-logo" src="./assets/icons/patagonia_logo.svg" alt="Patagonia"> -->
+      <!-- <img class="loading-logo" src="./assets/icons/logo-kbkm.png.png" alt="kbkm"> -->
       <div class="loading-bear"></div>
     </div>
     <div class="intro-meta" ng-class="{'is-active': (showMeta && !showDoomsday)}">
       <div class="meta-icons">
-        <div class="meta-sound"></div>
-        <div class="meta-vr"></div>
+        <!-- <div class="meta-sound"></div> -->
+        <!-- <div class="meta-vr"></div> -->
       </div>
       <!-- <p class="meta-note">Bears Ears is a multimedia experience that has been optimized for sound and VR</p> -->
       <div class="meta-buttons">
-        <a class="meta-experience" ng-click="goTo($event, 'experience')">Experience VR</a>
+        <!-- <a class="meta-experience" ng-click="goTo($event, 'experience')">Experience VR</a> -->
         <a class="meta-skip" ng-click="goTo($event, 'home')" ng-class="{'is-active': showMeta, 'is-visible': (showControls || (currentState == 'paused'))}">Skip</a>
       </div>
     </div>
@@ -395,8 +395,8 @@
 
   <div class="intro-titles" ng-class="{'is-active': !showPreviewTitle, 'is-done': introEnded}">
     <div class="title title--by" ng-class="{'is-active': activeTitle == 0 || activeTitle == 1}">
-      <img src="./assets/icons/logo-kbkm.png" width="500" alt="Patagonia">Presents
-      <!-- <img src="./assets/intro/logo-kbkm.png" alt="Patagonia">Presents -->
+      <img src="./assets/icons/logo-kbkm.png" width="500" alt="kbkm">Presents
+      <!-- <img src="./assets/intro/logo-kbkm.png" alt="kbkm">Presents -->
       <!-- <div class="title--sub" ng-class="{'is-active': activeTitle == 1}">
         Support By <img src="./assets/icons/google_logo.svg" alt="Google">
       </div> -->
@@ -466,7 +466,7 @@
         <div class="credits-column">
           <div class="credits-group">
             <strong>Presented By</strong>
-            <p><a target="_blank" class="credits-imagelink" href="#"><img class="credits-logo" src="./assets/icons/patagonia_logo.svg" alt="asd"></a></p>
+            <p><a target="_blank" class="credits-imagelink" href="#"><img class="credits-logo" src="./assets/icons/logo-kbkm.png" alt="kbkm"></a></p>
           </div>
 
           <div class="credits-group">

@@ -237,7 +237,7 @@ async function getData() {
                         var encode = encodeURIComponent(window.location.hostname);
                         window.open("https://www.facebook.com/sharer.php?u=" + encode, "", "height=368,width=600,left=100,top=100,menubar=0")
                     }, headerController.prototype.shareTwitter = function () {
-                        var shareText = "Keep public lands in public hands. Protect Bears Ears National Monument. Explore more at bearsears.patagonia.com",
+                        var shareText = "Keep public lands in public hands. Borobudur National Monument.",
                             encode = encodeURIComponent(window.location.hostname) + "&text=" + encodeURIComponent(shareText);
                         window.open("https://twitter.com/intent/tweet?url=" + encode, "", "height=440,width=500,left=100,top=100,menubar=0")
                     }, headerController.prototype.closeMenu = function () {
