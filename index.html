@@ -37,11 +37,14 @@
         ng-class="{'is-visible': headerVisible, 'is-enabled': headerEnabled}" ng-controller="headerController">
       <div class="header--left" ng-class="{'is-hidden': experienceActive}">
         <a class="logo" href="#" title="Brand" ng-click="goHome($event)">
-          <!-- <img src="./assets/icons/logo.png" style="height:90px!important; margin-top: -20px;" alt="kbkm">
-          <img src="./assets/icons/logo-kementrian.svg" style="height:90px!important; margin-top: -20px;" alt="kbkm"> -->
-          <!-- <img src="./assets/icons/logo-kbkm.png" style="height:90px!important; margin-top: -20px;" alt="kbkm"> -->
-          <img src="./assets/icons/logo-kbkm.png"  style="height:48px!important;" alt="kbkm">
+          <img src="./assets/icons/logo.png" style="height: 53px !important" alt="knkm">
         </a>
+        <a class="logo" href="#" title="Brand" ng-click="goHome($event)">
+            <img src="./assets/icons/logo-kementrian.svg" alt="knkm">
+          </a>
+          <a class="logo" href="#" title="Brand" ng-click="goHome($event)">
+            <img src="./assets/icons/logo-kbkm.png" alt="kbkm">
+          </a>
         <div class="breadcrumbs"
             ng-controller="breadcrumbController"
             ng-class="{'is-visible': showBreadcrumbs}">
@@ -193,7 +196,7 @@
         </a>
       </div> -->
       <div class="menu-overlay"></div>
-      <div class="menuTitle" style="top: 25px !important;">Borobudur<br /><span class="t-strikethrough">National Monument</span></div>
+      <div class="menuTitle">Borobudur<br /><span class="t-strikethrough">National Monument</span></div>
       <!-- <a href="/credits" class="menu-creditslink" ng-click="visit($event)">Credits</a> -->
     </div>
   </div>
@@ -209,7 +212,7 @@
       <div class="menu-arrow-bg"></div>
     </div>
 
-    <div class="menuSections" ng-if="isMobile" style="overflow:auto; position:relative; top: 20px!important; margin: 10px 0; width: 250px!important;">
+    <div class="menuSections" ng-if="isMobile">
       <a href="#" ng-repeat="item in main"
           ng-class="{'menuSection--action' : $index == 2, 'is-active': section == $index}"
           ng-click="move($index)">//item.content.name//
@@ -347,8 +350,8 @@
     </div>
     <div class="intro-meta" ng-class="{'is-active': (showMeta && !showDoomsday)}">
       <div class="meta-icons">
-        <!-- <div class="meta-sound"></div> -->
-        <!-- <div class="meta-vr"></div> -->
+        <div class="meta-sound"></div>
+        <div class="meta-vr"></div>
       </div>
       <!-- <p class="meta-note">Bears Ears is a multimedia experience that has been optimized for sound and VR</p> -->
       <div class="meta-buttons">
