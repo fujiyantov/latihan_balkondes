@@ -318,6 +318,7 @@
 
   <!-- CARD MAP -->
   <a class="card card--map" id="//place.id//"
+    ng-if="!place.content.videoVR && (place.type == 'video')"
     ng-repeat="place in places"
     href="//'/' + place.id//" ng-click="visit($event)"
     ng-class="{'is-active': ($parent.currentMarker.id == place.id)}"
@@ -331,6 +332,28 @@
       <span ng-if="!place.content.videoVR && (place.type == 'video')" class="card-cta">Explore Video</span>
       <span ng-if="(place.type == 'streetview')" class="card-cta">Explore Street View</span>
       <span ng-if="(place.type == 'pano')" class="card-cta">Explore Panorama</span>
+      <span ng-if="(place.type == 'story')" class="card-cta">Explore Story</span>
+    </div>
+    <div class="card-close" ng-click="hideCard($event)"></div>
+  </a>
+
+  <a class="card card--map" id="//place.id//"
+    ng-repeat="place in places"
+    ng-if="(place.type == 'story')"
+    href="//place.content.urlTarget//" target="_blank"
+    ng-class="{'is-active': ($parent.currentMarker.id == place.id)}"
+    ng-style="{'background-image': 'url(' + place.content.image + ')',
+              'left': $parent.currentCoords.x, 'top': $parent.currentCoords.y}">
+
+    <div class="card-icon typeIcon--//place.content.icons[0]//"></div>
+    <div class="card-content">
+      <span class="card-label">//place.parent// //place.content.number//</span>
+      <span class="card-title">//place.content.name//</span>
+      <span ng-if="place.content.videoVR" class="card-cta">Explore 360 Video</span>
+      <span ng-if="!place.content.videoVR && (place.type == 'video')" class="card-cta">Explore Video</span>
+      <span ng-if="(place.type == 'streetview')" class="card-cta">Explore Street View</span>
+      <span ng-if="(place.type == 'pano')" class="card-cta">Explore Panorama</span>
+      <span ng-if="(place.type == 'story')" class="card-cta">Explore Story</span>
     </div>
     <div class="card-close" ng-click="hideCard($event)"></div>
   </a>
