@@ -3,7 +3,8 @@ getData();
 
 async function getData() {
     // const url = "http://127.0.0.1:7000/api/collections"
-    const url = "https://dm.fujiyantov.id/api/collections"
+    // const url = "https://dm.fujiyantov.id/api/collections"
+    const url = "https://cms.borobudurside.com/api/collections"
     const response = await fetch(url)
     if (response) {
 
@@ -434,7 +435,7 @@ async function getData() {
                         mapController = function ($scope, $rootScope, $element, $interval, $timeout, mapService, configService, stateService) {
                             console.log('try')
                             // intervalMap = setTimeout(() => {
-                            this.$scope = $scope, this.$rootScope = $rootScope, this.$interval = $interval, this.$element = $element, this.$timeout = $timeout, this.mapService = mapService, this.configService = configService, this.stateService = stateService, this.$scope.showMap = !1, this.$scope.places = this.places = [], this.$scope.currentMarker, this.$scope.currentCoords, this.$scope.hovered = !1, this.$scope.showInfo = !1, this.map, this.center, this.zoomLevel = 12, this.overlay, this.markers = [], this.timer, this.mapOffset = $(window).width() / 5, this.displaytimer, this.$scope.open = this.open.bind(this), this.$scope.hideCard = this.hideCard.bind(this), this.$scope.visit = this.visit.bind(this), this.$scope.toggleInfo = this.toggleInfo.bind(this), this.$scope.zoomIn = this.zoomIn.bind(this), this.$scope.zoomOut = this.zoomOut.bind(this), this.stateLabels = content.map.content["state-labels"], this.observer, this.markerDelaySet = 0, this.$timeout(function () {
+                            this.$scope = $scope, this.$rootScope = $rootScope, this.$interval = $interval, this.$element = $element, this.$timeout = $timeout, this.mapService = mapService, this.configService = configService, this.stateService = stateService, this.$scope.showMap = !1, this.$scope.places = this.places = [], this.$scope.currentMarker, this.$scope.currentCoords, this.$scope.hovered = !1, this.$scope.showInfo = !1, this.map, this.center, this.zoomLevel = 14, this.overlay, this.markers = [], this.timer, this.mapOffset = $(window).width() / 5, this.displaytimer, this.$scope.open = this.open.bind(this), this.$scope.hideCard = this.hideCard.bind(this), this.$scope.visit = this.visit.bind(this), this.$scope.toggleInfo = this.toggleInfo.bind(this), this.$scope.zoomIn = this.zoomIn.bind(this), this.$scope.zoomOut = this.zoomOut.bind(this), this.stateLabels = content.map.content["state-labels"], this.observer, this.markerDelaySet = 0, this.$timeout(function () {
                                 this._init()
                             }.bind(this))
                             // }, 3000);
@@ -465,7 +466,7 @@ async function getData() {
                                 minZoom: 7,
                                 scrollwheel: !1,
                                 // zoom: this.zoomLevel,
-                                zoom: 12,
+                                zoom: 14,
                                 styles: [{
                                     stylers: [{
                                         visibility: "off"
