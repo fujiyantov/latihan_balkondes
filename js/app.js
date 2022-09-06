@@ -2,9 +2,7 @@ let startedData;
 getData();
 
 async function getData() {
-    // const url = "http://127.0.0.1:7000/api/collections"
-    const url = "https://dm.fujiyantov.id/api/collections"
-    // const url = "https://cms.borobudurside.com/api/collections"
+    const url = "https://cms.borobudurside.com/api/collections"
     const response = await fetch(url)
     if (response) {
 

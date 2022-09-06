@@ -2,22 +2,7 @@
 <html>
   <head>
     <base href="/" />
-    <title>Lorem Ipsum Dolor Sit Amet</title>
-    <meta property="og:site_name" content="Defend Bears Ears"/>
-    <meta property="og:title" content="Borobudur"/>
-    <meta property="og:url" content="#"/>
-    <meta property="og:description" content="Keep public lands in public hands. Protect Bears Ears National Monument and its millions of acres of world-class recreation, archeology, and culture." />
-    <meta property="og:type" content="website"/>
-    <meta property="og:image" content="#" />
-    <meta name="name" content="Defend Bears Ears"/>
-    <meta name="url" content="#"/>
-    <meta name="twitter:title" content="Borobudur"/>
-    <meta name="twitter:url" content="#"/>
-    <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:description" content="Keep public lands in public hands. Protect Bears Ears National Monument and its millions of acres of world-class recreation, archeology, and culture.">
-    <meta name="twitter:image" content="#">
-    <meta name="description" content="Keep public lands in public hands. Protect Bears Ears National Monument and its millions of acres of world-class recreation, archeology, and culture." />
-    <link rel="canonical" href="#" />
+    <title>Kemah Budaya Kaum Muda</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <script>
@@ -58,18 +43,7 @@
             ng-click="toggleMenu()"
             ng-class="{'is-inactive': (menuButton !== 'open'), 'is-active': isAtHome, 'is-takeaction': takeActionActive}">
           <div></div>
-          <!-- <span>View Chapters</span> -->
-          <!-- <span>Menu</span> -->
         </a>
-        <!-- <a class="menu-share" href="gallery.html" target="_blank" style="margin-left: 75px!important;">GALLERY</a>
-            <a class="menu-share" style="margin-left: 75px!important;">TRAVELLER</a> -->
-        <!-- <a class="menu-share"
-            ng-click="shareFB()" ng-style="{'background-image': 'url(./assets/icons/share-facebook.svg)'}"></a>
-        <a class="menu-share"
-            ng-click="shareTwitter()" ng-style="{'background-image': 'url(./assets/icons/share-twitter.svg)'}"></a> -->
-        <!-- <a class="menu-takeaction"
-            ng-click="visit('take-action')"
-            ng-class="{'is-visible': !takeActionActive}">Take Action</a> -->
       </div>
       <a class="menu-home" ng-click="goHome($event)" ng-class="{'is-visible': experienceActive}">View the Full Site</a>
     </header>
@@ -109,7 +83,7 @@
         </div>
       </a>
       
-      <a href="https://culture.fujiyantov.id" target="_blank" class="menuItem">
+      <a href="https://culture.borobudurside.com" target="_blank" class="menuItem">
         <div class="menuItem-background">
           <div ng-if="isMobile" style="background-image: url('https://images.pexels.com/photos/2583854/pexels-photo-2583854.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')"></div>
           <div ng-if="!isMobile" style="background-image: url('https://images.pexels.com/photos/2583854/pexels-photo-2583854.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')""></div>
@@ -136,7 +110,7 @@
         </div>
       </a>
 
-      <a href="https://market.fujiyantov.id" target="_blank" class="menuItem">
+      <a href="https://market.borobudurside.com" target="_blank" class="menuItem">
         <div class="menuItem-background">
           <div ng-if="isMobile" style="background-image: url('https://images.pexels.com/photos/758742/pexels-photo-758742.jpeg?auto=compress&cs=tinysrgb&w=1600')"></div>
           <div ng-if="!isMobile" style="background-image: url('https://images.pexels.com/photos/758742/pexels-photo-758742.jpeg?auto=compress&cs=tinysrgb&w=1600')""></div>
@@ -163,7 +137,7 @@
         </div>
       </a>
 
-      <a href="https://market.fujiyantov.id" target="_blank" class="menuItem">
+      <a href="https://market.borobudurside.com" target="_blank" class="menuItem">
         <div class="menuItem-background">
           <div ng-if="isMobile" style="background-image: url('https://images.pexels.com/photos/2166559/pexels-photo-2166559.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')"></div>
           <div ng-if="!isMobile" style="background-image: url('https://images.pexels.com/photos/2166559/pexels-photo-2166559.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')""></div>
@@ -190,14 +164,9 @@
         </div>
       </a>
 
-      <!-- <div class="controls-map">
-        <a href="/map" class="controls-mapLink" ng-click="visit($event)">
-          <div class="controls-mapIcon" ng-style="{'background-image': 'url(./assets/map/map-world.png)'}"></div>
-        </a>
-      </div> -->
       <div class="menu-overlay"></div>
       <div class="menuTitle">Borobudur<br /><span class="t-strikethrough">National Monument</span></div>
-      <!-- <a href="/credits" class="menu-creditslink" ng-click="visit($event)">Credits</a> -->
+
     </div>
   </div>
 
@@ -368,7 +337,6 @@
     ng-class="{'is-active': active, 'is-controls-visible': (controlActive && showControls || (currentState == 'paused'))}">
   <div class="intro-info" ng-class="{'is-active': (showLoading || showMeta), 'is-done': introEnded}">
     <div class="intro-loading" ng-class="{'is-active' : showLoading}">
-      <!-- <img class="loading-logo" src="./assets/icons/logo-kbkm.png.png" alt="kbkm"> -->
       <div class="loading-bear"></div>
     </div>
     <div class="intro-meta" ng-class="{'is-active': (showMeta && !showDoomsday)}">
@@ -376,7 +344,6 @@
         <div class="meta-sound"></div>
         <div class="meta-vr"></div>
       </div>
-      <!-- <p class="meta-note">Bears Ears is a multimedia experience that has been optimized for sound and VR</p> -->
       <div class="meta-buttons">
         <a class="meta-experience" ng-click="goTo($event, 'experience')">Experience VR</a>
         <a class="meta-skip" ng-click="goTo($event, 'home')" ng-class="{'is-active': showMeta, 'is-visible': (showControls || (currentState == 'paused'))}">Skip</a>
@@ -422,10 +389,6 @@
   <div class="intro-titles" ng-class="{'is-active': !showPreviewTitle, 'is-done': introEnded}">
     <div class="title title--by" ng-class="{'is-active': activeTitle == 0 || activeTitle == 1}">
       <img src="./assets/icons/logo-kbkm.png" width="500" alt="kbkm">Presents
-      <!-- <img src="./assets/intro/logo-kbkm.png" alt="kbkm">Presents -->
-      <!-- <div class="title--sub" ng-class="{'is-active': activeTitle == 1}">
-        Support By <img src="./assets/icons/google_logo.svg" alt="Google">
-      </div> -->
     </div>
     <div class="title title--final" ng-class="{'is-active': activeTitle == 2}">Borobudur <span class="t-strikethrough">National Monument</span></div>
   </div>
@@ -451,127 +414,6 @@
     <div class="controls-muteToggle" ng-class="{'is-unmute-btn': isMuted}" ng-click="toggleMute()"></div>
   </div>
 </section>
-
-
-  <section class="takeaction"
-    ng-controller="takeactionController"
-    ng-class="{'is-active': active, 'is-menu-open': isMenuOpen}">
-  <div class="takeaction--gradient"
-    ng-class="{'is-visible': (showGradient && active)}"></div>
-  <div class="takeaction--callout"
-      ng-class="{'is-active': active}">
-    <div class="takeaction-bg"></div>
-    <h1>Take<br />Action</h1>
-    <p><strong>Public lands have never been more threatened than right now.</strong></p>
-    <p>&nbsp;</p>
-    <p>The fate of our national monuments is in the hands of the Trump administration. Public lands—from Maine to Hawai’i—provide enormous cultural, ecological and recreational value, and they are at risk. Removing protections for these wild places to open them up for development will not make us energy independent, and history shows that when states control these lands, they are sold to the highest bidder. This is not a chance we are willing to take.</p>
-    <p>&nbsp;</p>
-    <p><strong>Defend the land you have left.</strong></p>
-    <p class="footnote"><strong>Powered by <a href="http://phone2action.com" target="_blank">Phone2Action</a></strong></p>
-  </div>
-
-  <div class="takeaction--form"
-      ng-class="{'is-active': active}">
-    <div class="takeaction-formintro">
-      <h2>The President Stole Bears Ears National Monument</h2>
-      <p>In an illegal move, the president just reduced the size of Bears Ears and Grand Staircase-Escalante National Monuments. This is the largest elimination of protected land in American history.</p>
-      <p>&nbsp;</p>
-      <p>Tell the Administration that they don’t have the authority to take these lands away from you.</p>
-    </div>
-    <div class="advocacy-actionwidget" data-domain="p2a.co" data-shorturl="3lXjOXB" data-responsive="true"></div>
-  </div>
-</section>
-
-  <section class="credits" ng-controller="creditsController"
-    ng-class="{'is-active': active, 'is-menu-open': isMenuOpen}">
-  <div class="overlay">
-    <div class="overlay-container">
-      <div class="overlay-number">Bears Ears</div>
-      <h1 class="overlay-name">Credits</h1>
-      <div class="credits">
-        <div class="credits-column">
-          <div class="credits-group">
-            <strong>Presented By</strong>
-            <p><a target="_blank" class="credits-imagelink" href="#"><img class="credits-logo" src="./assets/icons/logo-kbkm.png" alt="kbkm"></a></p>
-          </div>
-
-          <div class="credits-group">
-            <strong>Photography</strong>
-            <p>Josh Ewing</p>
-            <p>Andrew Burr</p>
-            <p>Matthew Van Biene</p>
-            <p>Randall Tate</p>
-            <p>Marc Toso</p>
-          </div>
-        </div>
-
-        <div class="credits-column">
-          <div class="credits-group">
-            <strong><a target="_blank" href="http://www.ducttapethenbeer.com/">Duct Tape Then Beer</a> Team</strong>
-            <p>Becca Cahall</p>
-            <p>Fitz Cahall</p>
-            <p>Isaiah Branch – Boyle</p>
-            <p>Mario Quintana</p>
-            <p>Amy Stolzenbach</p>
-          </div>
-
-          <div class="credits-group">
-            <strong>Special Thanks</strong>
-            <p>Josh Ewing</p>
-            <p>Ron Hunter</p>
-            <p>Gavin Noyes</p>
-            <p>Cynthia Wilson</p>
-            <p>Vaughn Hadenfeldt</p>
-            <p>Marcia Hadenfeld</p>
-            <p>Amanda Podmore</p>
-          </div>
-        </div>
-
-        <div class="credits-column">
-          <div class="credits-group">
-            <strong>Design and Development</strong>
-            <p><a href="http://upperquad.com" target="_blank">Upperquad</a></p>
-          </div>
-
-          <div class="credits-group">
-            <strong>Technology Partners</strong>
-            <p>Sandy Russell</p>
-            <p>Karen Tuxen-Bettman</p>
-            <p>Sarah Steele</p>
-            <p>Wayne Thai</p>
-          </div>
-
-          <div class="credits-group">
-            <strong>And the</strong>
-            <p>Google Maps Team</p>
-          </div>
-        </div>
-
-        <div class="credits-column">
-          <div class="credits-group">
-            <strong>Featuring</strong>
-            <p>Tommy Caldwell</p>
-            <p>Brady Robinson</p>
-            <p>Kitty Calhoun</p>
-            <p>Andrew Burr</p>
-            <p>Steve Fassbinder</p>
-            <p>Luke Nelson</p>
-            <p>Dawn Glanc</p>
-            <p>Willie Grayeyes</p>
-            <p>Jason Nez</p>
-            <p>Lyle Balenquah</p>
-            <p>Riley Balenquah</p>
-            <p>Malcolm Lehi</p>
-            <p>Octavius Seowtewa</p>
-            <p>Davis Filfred</p>
-            <p>Mary Jane Yazzie</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 
   <div id="stage"></div>
 
