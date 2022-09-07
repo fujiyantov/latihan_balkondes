@@ -3794,7 +3794,7 @@ section.credits .credits-group strong .intro-play a,
 
 .intro-info .loading-bear {
   /* background: url("../assets/intro/logo-kbkm.png") center/contain no-repeat; */
-  background: url("../assets/icons/logo-kbkm.png") center/contain no-repeat;
+  /* background: url("../assets/icons/logo-kbkm.png") center/contain no-repeat; */
   display: block;
   height: 180px;
   margin: -10px 0 20px 10px;
@@ -3963,7 +3963,7 @@ section.credits .credits-group strong .intro-play a,
 }
 
 .intro-info .meta-vr {
-  background: url("../assets/icons/logo-kbkm.png") center center no-repeat;
+  /* background: url("../assets/icons/logo-kbkm.png") center center no-repeat; */
   /* background: url("../assets/icons/loading_video.svg") center center no-repeat; */
   background-size: contain;
   transition-delay: 1.75s;
@@ -6727,8 +6727,8 @@ section.is-menu-open .overlay.is-visible .overlay-detail {
 }
 
 .overlay--loading {
-  background: url("../assets/intro/logo-kbkm.png") center/contain no-repeat;
   /* background: url("../assets/intro/_loader-2x.gif") center/contain no-repeat; */
+  /* background: url("../assets/intro/logo-kbkm.png") center/contain no-repeat; */
   display: none;
   height: 180px;
   left: 50%;
@@ -8345,7 +8345,7 @@ a.button {
 
 .video-js .vjs-loading-spinner {
   /* background: url("../assets/intro/_loader-2x.gif") center/cover no-repeat transparent; */
-  background: url("../assets/intro/logo-kbkm.png") center/cover no-repeat transparent;
+  /* background: url("../assets/intro/logo-kbkm.png") center/cover no-repeat transparent; */
   border: none;
   height: 190px;
   margin: 0;

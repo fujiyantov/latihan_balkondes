@@ -2,7 +2,7 @@
 <html>
   <head>
     <base href="/" />
-    <title>Kemah Budaya Kaum Muda</title>
+    <title>Wonderful Culture and Village Around Borobudur</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <script>
@@ -306,6 +306,7 @@
     <div class="card-close" ng-click="hideCard($event)"></div>
   </a>
 
+  <!-- VIDEO -->
   <a class="card card--map" id="//place.id//"
     ng-repeat="place in places"
     ng-if="(place.type == 'story')"
@@ -323,6 +324,50 @@
       <span ng-if="(place.type == 'streetview')" class="card-cta">Explore Street View</span>
       <span ng-if="(place.type == 'pano')" class="card-cta">Explore Panorama</span>
       <span ng-if="(place.type == 'story')" class="card-cta">Explore Story</span>
+    </div>
+    <div class="card-close" ng-click="hideCard($event)"></div>
+  </a>
+
+  <!-- STORY MAP -->
+  <a class="card card--map" id="//place.id//"
+    ng-repeat="place in places"
+    ng-if="(place.type == 'story_map')"
+    href="//place.content.urlTargetStoryMap//" target="_blank"
+    ng-class="{'is-active': ($parent.currentMarker.id == place.id)}"
+    ng-style="{'background-image': 'url(' + place.content.image + ')',
+              'left': $parent.currentCoords.x, 'top': $parent.currentCoords.y}">
+
+    <div class="card-icon typeIcon--//place.content.icons[0]//"></div>
+    <div class="card-content">
+      <span class="card-label">//place.parent// //place.content.number//</span>
+      <span class="card-title">//place.content.name//</span>
+      <span ng-if="place.content.videoVR" class="card-cta">Explore 360 Video</span>
+      <span ng-if="!place.content.videoVR && (place.type == 'video')" class="card-cta">Explore Video</span>
+      <span ng-if="(place.type == 'streetview')" class="card-cta">Explore Street View</span>
+      <span ng-if="(place.type == 'pano')" class="card-cta">Explore Panorama</span>
+      <span ng-if="(place.type == 'story_map')" class="card-cta">Explore Story</span>
+    </div>
+    <div class="card-close" ng-click="hideCard($event)"></div>
+  </a>
+
+  <!-- Virtual Tour -->
+  <a class="card card--map" id="//place.id//"
+    ng-repeat="place in places"
+    ng-if="(place.type == 'virtual_tour')"
+    href="//place.content.urlTargetVirtualTour//" target="_blank"
+    ng-class="{'is-active': ($parent.currentMarker.id == place.id)}"
+    ng-style="{'background-image': 'url(' + place.content.image + ')',
+              'left': $parent.currentCoords.x, 'top': $parent.currentCoords.y}">
+
+    <div class="card-icon typeIcon--//place.content.icons[0]//"></div>
+    <div class="card-content">
+      <span class="card-label">//place.parent// //place.content.number//</span>
+      <span class="card-title">//place.content.name//</span>
+      <span ng-if="place.content.videoVR" class="card-cta">Explore 360 Video</span>
+      <span ng-if="!place.content.videoVR && (place.type == 'video')" class="card-cta">Explore Video</span>
+      <span ng-if="(place.type == 'streetview')" class="card-cta">Explore Street View</span>
+      <span ng-if="(place.type == 'pano')" class="card-cta">Explore Panorama</span>
+      <span ng-if="(place.type == 'virtual_tour')" class="card-cta">Virtual Tour</span>
     </div>
     <div class="card-close" ng-click="hideCard($event)"></div>
   </a>
@@ -364,8 +409,8 @@
 
   <div class="intro-preview" ng-class="{'is-active': (showPreview && showMeta), 'is-done': introEnded}">
     <div class="title" ng-class="{'is-active': showPreviewTitle}">
-      <div><span>Borobudur</span></div>
-      <div class="t-smallcaps t-strikethrough">National Monument</div>
+      <!-- <div><span>Borobudur</span></div>
+      <div class="t-smallcaps t-strikethrough">National Monument</div> -->
     </div>
 
     <div class="intro-play"
@@ -378,9 +423,9 @@
 
   <div class="intro-doomsday overlay has-background" ng-class="{'is-active': doomsday && showDoomsday}">
     <div class="overlay-container">
-      <h1>The President Stole Bears Ears National Monument</h1>
+      <!-- <h1>The President Stole Bears Ears National Monument</h1>
       <p>In an illegal move, the president just reduced the size of Bears Ears and Grand Staircase-Escalante National Monuments. This is the largest elimination of protected land in American history.</p>
-      <a class="doomsday-button" ng-click="goTo($event, 'take-action')">Defend the land you have left.</a>
+      <a class="doomsday-button" ng-click="goTo($event, 'take-action')">Defend the land you have left.</a> -->
     </div>
 
     <a class="doomsday-skip" ng-click="skipDoomsday()">Continue to the site</a>
@@ -388,7 +433,7 @@
 
   <div class="intro-titles" ng-class="{'is-active': !showPreviewTitle, 'is-done': introEnded}">
     <div class="title title--by" ng-class="{'is-active': activeTitle == 0 || activeTitle == 1}">
-      <img src="./assets/icons/logo-kbkm.png" width="500" alt="kbkm">Presents
+      <!-- <img src="./assets/icons/logo-kbkm.png" width="500" alt="kbkm">Presents -->
     </div>
     <div class="title title--final" ng-class="{'is-active': activeTitle == 2}">Borobudur <span class="t-strikethrough">National Monument</span></div>
   </div>
