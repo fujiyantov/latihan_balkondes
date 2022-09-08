@@ -1188,7 +1188,8 @@ async function getData() {
                         }.bind(this))
                     }, videoController.prototype._checkEnd = function () {
                         !this.under10 && this.$scope.timeTotal - this.$scope.timeCurrent < 10 && (this.under10 = !0, !this.content["no-auto-next-button"] && this.content.showNextCard && (this.$scope.showNextButton = !0)), this.under10 && this.$scope.timeTotal - this.$scope.timeCurrent >= 10 && (this.under10 = !1, this.$scope.showNextButton = !1), !this.under5 && this.$scope.timeTotal - this.$scope.timeCurrent < 5 && (this.under5 = !0, this._queueNext("next")), !this.under1 && this.$scope.timeTotal - this.$scope.timeCurrent < 1 && (this.under1 = !0, this.$scope.showNextButton = !1, this.$timeout(function () {
-                            this.goTo()
+                            console.log('end video')
+                            this.goTo('home')
                         }.bind(this)))
                     }, videoController.prototype._setPoweredBy = function () {
                         this.$scope.timeCurrent < 7 && this.$scope.timeCurrent > 2 && this.content["powered-by-earch"] ? this.$scope.showPoweredBy = !0 : this.$scope.showPoweredBy = !1
