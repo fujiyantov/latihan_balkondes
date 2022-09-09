@@ -229,6 +229,108 @@
           </div>
         </div>
       </a>
+
+       <!-- Story -->
+       <a class="menuItem"
+       ng-if="(item.type == 'story')"
+       href="//item.content.urlTarget//" target="_blank"
+       ng-repeat="item in full"
+       ng-class="{'menuItem--firstTier' : item.level == 1}">
+     <div class="menuItem-background">
+       <div ng-if="isMobile" ng-style="{'background-image': 'url(' + item.content.image + ')'}"></div>
+       <div ng-if="!isMobile" ng-style="{'background-image': 'url(' + item.content.image + ')'}"></div>
+     </div>
+     <div class="menuItem-content menuItem-content--base">
+       <div class="menuItem-meta">
+         <span class="menuItem-number">//item.content.number//</span>
+         <span class="menuItem-type typeIcon--//type//" ng-repeat="type in item.content.icons"></span>
+         <div class="menuItem-bar"></div>
+       </div>
+       <span class="menuItem-name">//item.content.name//</span>
+       <span class="menuItem-watched" ng-class="{'is-visible': item.watched}">Watched</span>
+     </div>
+
+     <div class="menuItem-content menuItem-content--hover">
+       <div class="menuItem-container">
+         <div class="menuItem-meta">
+           <span class="menuItem-number">//item.content.number//</span>
+           <span class="menuItem-type typeIcon--//type//" ng-repeat="type in item.content.icons"></span>
+           <div class="menuItem-bar"></div>
+         </div>
+         <span class="menuItem-name">//item.content.name//</span>
+         <p class="menuItem-description">//item.content.description//</p>
+         <div class="menuItem-link" href="//'/' + item.id//" ng-click="visit($event)">//item.content.cta ? item.content.cta : 'Explore'//</div>
+       </div>
+     </div>
+   </a>
+
+   <!-- Story Map -->
+   <a class="menuItem"
+       ng-if="(item.type == 'story_map')"
+       href="//item.content.urlTargetStoryMap//" target="_blank"
+       ng-repeat="item in full"
+       ng-class="{'menuItem--firstTier' : item.level == 1}">
+     <div class="menuItem-background">
+       <div ng-if="isMobile" ng-style="{'background-image': 'url(' + item.content.image + ')'}"></div>
+       <div ng-if="!isMobile" ng-style="{'background-image': 'url(' + item.content.image + ')'}"></div>
+     </div>
+     <div class="menuItem-content menuItem-content--base">
+       <div class="menuItem-meta">
+         <span class="menuItem-number">//item.content.number//</span>
+         <span class="menuItem-type typeIcon--//type//" ng-repeat="type in item.content.icons"></span>
+         <div class="menuItem-bar"></div>
+       </div>
+       <span class="menuItem-name">//item.content.name//</span>
+       <span class="menuItem-watched" ng-class="{'is-visible': item.watched}">Watched</span>
+     </div>
+
+     <div class="menuItem-content menuItem-content--hover">
+       <div class="menuItem-container">
+         <div class="menuItem-meta">
+           <span class="menuItem-number">//item.content.number//</span>
+           <span class="menuItem-type typeIcon--//type//" ng-repeat="type in item.content.icons"></span>
+           <div class="menuItem-bar"></div>
+         </div>
+         <span class="menuItem-name">//item.content.name//</span>
+         <p class="menuItem-description">//item.content.description//</p>
+         <div class="menuItem-link" href="//'/' + item.id//" ng-click="visit($event)">//item.content.cta ? item.content.cta : 'Explore'//</div>
+       </div>
+     </div>
+   </a>
+
+   <!-- Virtual Tour -->
+   <a class="menuItem"
+       ng-if="(item.type == 'virtual_tour')"
+       href="//item.content.urlTargetVirtualTour//" target="_blank"
+       ng-repeat="item in full"
+       ng-class="{'menuItem--firstTier' : item.level == 1}">
+     <div class="menuItem-background">
+       <div ng-if="isMobile" ng-style="{'background-image': 'url(' + item.content.image + ')'}"></div>
+       <div ng-if="!isMobile" ng-style="{'background-image': 'url(' + item.content.image + ')'}"></div>
+     </div>
+     <div class="menuItem-content menuItem-content--base">
+       <div class="menuItem-meta">
+         <span class="menuItem-number">//item.content.number//</span>
+         <span class="menuItem-type typeIcon--//type//" ng-repeat="type in item.content.icons"></span>
+         <div class="menuItem-bar"></div>
+       </div>
+       <span class="menuItem-name">//item.content.name//</span>
+       <span class="menuItem-watched" ng-class="{'is-visible': item.watched}">Watched</span>
+     </div>
+
+     <div class="menuItem-content menuItem-content--hover">
+       <div class="menuItem-container">
+         <div class="menuItem-meta">
+           <span class="menuItem-number">//item.content.number//</span>
+           <span class="menuItem-type typeIcon--//type//" ng-repeat="type in item.content.icons"></span>
+           <div class="menuItem-bar"></div>
+         </div>
+         <span class="menuItem-name">//item.content.name//</span>
+         <p class="menuItem-description">//item.content.description//</p>
+         <div class="menuItem-link" href="//'/' + item.id//" ng-click="visit($event)">//item.content.cta ? item.content.cta : 'Explore'//</div>
+       </div>
+     </div>
+   </a>
       <div class="menu-overlay"></div>
     </div>
   </div>
