@@ -5246,7 +5246,8 @@ section.credits .credits-group strong .intro-preview a,
 
 .menu .menuTitle span {
   display: block;
-  font-size: 12px;
+  /* font-size: 12px; */
+  font-size: 7px;
   line-height: 1.25em;
   letter-spacing: .1em;
   text-transform: uppercase;
