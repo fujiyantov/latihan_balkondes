@@ -2,7 +2,7 @@ let startedData;
 getData();
 
 async function getData() {
-    const url = "https://cms.borobudurside.com/api/collections"
+    const url = "https://admin.borobudurside.com/api/collections"
     const response = await fetch(url)
     if (response) {
 
@@ -1435,7 +1435,8 @@ async function getData() {
                         mapService = function ($window, $q) {
                             // var asyncUrl = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBHspqOaEZ4v9ne4VWobYT02OLmHdifIOs&callback=",
                             // var asyncUrl = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBJGn7OJX8JSUnZp4WkyxRLDYMjj6pzcLU&callback=",
-                            var asyncUrl = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCL3qmSEZlR-lTVQkqxUsBoM8IdoL4QkCA&callback=",
+                            // var asyncUrl = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCL3qmSEZlR-lTVQkqxUsBoM8IdoL4QkCA&callback=",
+                            var asyncUrl = "https://maps.googleapis.com/maps/api/js?key=AIzaSyB0pSkBsil8-LC22g_U1c-w6APiRZS_EJI&callback=",
                                 mapsDefer = $q.defer();
                             $window.googleMapsInitialized = mapsDefer.resolve;
                             var asyncLoad = function (asyncUrl, callbackName) {
